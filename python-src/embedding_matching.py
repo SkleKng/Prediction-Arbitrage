@@ -16,13 +16,13 @@ from rapidfuzz import fuzz, process, utils
 from sentence_transformers import SentenceTransformer, util
 
 # ── Config ────────────────────────────────────────────────────────────────────
-POLY_FILE         = Path("poly_markets.json")
-KALSHI_FILE       = Path("kalshi_markets.json")
+POLY_FILE         = Path("markets/poly_markets.json")
+KALSHI_FILE       = Path("markets/kalshi_markets.json")
 EMBED_MODEL       = "all-mpnet-base-v2"
 FUZZY_THRESHOLDS  = [90]
 EMBED_THRESHOLDS  = [0.9]
-FUZZY_OUTPUT_FILE = Path("fuzzy_matches.json")
-EMBED_OUTPUT_FILE = Path("embed_matches.json")
+FUZZY_OUTPUT_FILE = Path("matches/fuzzy_matches.json")
+EMBED_OUTPUT_FILE = Path("matches/embed_matches.json")
 
 
 # ── Load ──────────────────────────────────────────────────────────────────────
@@ -32,11 +32,13 @@ def load(path):
 
 
 # ── Fuzzy matching ────────────────────────────────────────────────────────────
-def run_fuzzy(poly_titles, kalshi_titles, threshold):
+def run_fuzzy(poly_markets, kalshi_markets, threshold):
     """
     High-performance matching using RapidFuzz C++ backend.
-    Matches 1000x1000 titles in milliseconds.
     """
+    poly_titles   = [m["title"] for m in poly_markets]
+    kalshi_titles = [m["title"] for m in kalshi_markets]
+
     clean_poly   = [utils.default_process(t) for t in poly_titles]
     clean_kalshi = [utils.default_process(t) for t in kalshi_titles]
 
@@ -49,11 +51,11 @@ def run_fuzzy(poly_titles, kalshi_titles, threshold):
     )
 
     matches = []
-    for i, poly_title in enumerate(poly_titles):
+    for i, poly_market in enumerate(poly_markets):
         best_j     = np.argmax(score_matrix[i])
         best_score = score_matrix[i][best_j]
         if best_score >= threshold:
-            matches.append((poly_title, kalshi_titles[best_j], best_score))
+            matches.append((poly_market, kalshi_markets[best_j], float(best_score)))
 
     return matches
 
@@ -68,13 +70,13 @@ def run_embedding_matrix(poly_titles, kalshi_titles, model):
     print("  Computing cosine similarity matrix...")
     return util.cos_sim(poly_emb, kalshi_emb)
 
-def apply_embed_threshold(poly_titles, kalshi_titles, scores, threshold):
+def apply_embed_threshold(poly_markets, kalshi_markets, scores, threshold):
     matches = []
-    for i, p in enumerate(poly_titles):
+    for i, poly_market in enumerate(poly_markets):
         best_j = torch.argmax(scores[i]).item()
         score  = scores[i][best_j].item()
         if score >= threshold:
-            matches.append((p, kalshi_titles[best_j], round(score, 4)))
+            matches.append((poly_market, kalshi_markets[best_j], round(score, 4)))
     return matches
 
 
@@ -82,12 +84,38 @@ def apply_embed_threshold(poly_titles, kalshi_titles, scores, threshold):
 def print_matches(matches, label, threshold, elapsed_ms):
     print(f"\n  [{label} @ threshold={threshold}]  "
           f"{len(matches)} matches  |  {elapsed_ms:.1f}ms")
-    for p, k, s in matches[:10]:
-        p_short = (p[:55] + "..") if len(p) > 55 else p
-        k_short = (k[:55] + "..") if len(k) > 55 else k
+    for poly, kalshi, s in matches[:10]:
+        p_short = (poly["title"][:55] + "..") if len(poly["title"]) > 55 else poly["title"]
+        k_short = (kalshi["title"][:55] + "..") if len(kalshi["title"]) > 55 else kalshi["title"]
         print(f"    [{s:>6}]  {p_short:<57} ↔  {k_short}")
     if len(matches) > 10:
         print(f"    ... and {len(matches) - 10} more")
+
+def format_poly(m):
+    return {
+        "title":         m.get("title", ""),
+        "id":            m.get("id", ""),
+        "slug":          m.get("slug", ""),
+        "description":   m.get("description", ""),
+        "end_date":      m.get("end_date", ""),
+        "liquidity":     m.get("liquidity"),
+        "fee":           m.get("fee"),
+        "outcomePrices": m.get("outcomePrices"),
+        "volumeNum":     m.get("volumeNum"),
+    }
+
+def format_kalshi(m):
+    return {
+        "title":           m.get("title", ""),
+        "ticker":          m.get("ticker", ""),
+        "event_ticker":    m.get("event_ticker", ""),
+        "subtitle":        m.get("subtitle", ""),
+        "rules":           m.get("rules", ""),
+        "close_time":      m.get("close_time", ""),
+        "volume":          m.get("volume"),
+        "rules_primary":   m.get("rules_primary", ""),
+        "rules_secondary": m.get("rules_secondary", ""),
+    }
 
 def save_matches(all_matches, path):
     """Save all threshold results to a single JSON file."""
@@ -97,8 +125,12 @@ def save_matches(all_matches, path):
             "threshold": threshold,
             "count":     len(matches),
             "matches":   [
-                {"polymarket": p, "kalshi": k, "score": float(s)}
-                for p, k, s in matches
+                {
+                    "score":       float(s),
+                    "polymarket":  format_poly(poly),
+                    "kalshi":      format_kalshi(kalshi),
+                }
+                for poly, kalshi, s in matches
             ]
         })
     with open(path, "w") as f:
@@ -125,7 +157,7 @@ if __name__ == "__main__":
     # fuzzy_all = {}
     # for threshold in FUZZY_THRESHOLDS:
     #     t0      = time.perf_counter()
-    #     matches = run_fuzzy(poly_titles, kalshi_titles, threshold)
+    #     matches = run_fuzzy(poly_markets, kalshi_markets, threshold)
     #     elapsed = (time.perf_counter() - t0) * 1000
     #     print_matches(matches, "FUZZY", threshold, elapsed)
     #     fuzzy_all[threshold] = matches
@@ -146,7 +178,7 @@ if __name__ == "__main__":
     embed_all = {}
     for threshold in EMBED_THRESHOLDS:
         t0      = time.perf_counter()
-        matches = apply_embed_threshold(poly_titles, kalshi_titles, scores, threshold)
+        matches = apply_embed_threshold(poly_markets, kalshi_markets, scores, threshold)
         elapsed = (time.perf_counter() - t0) * 1000
         print_matches(matches, "EMBED", threshold, elapsed)
         embed_all[threshold] = matches

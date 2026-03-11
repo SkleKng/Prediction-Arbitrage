@@ -14,8 +14,8 @@ from datetime import datetime, timedelta, timezone
 
 
 # ── Config ────────────────────────────────────────────────────────────────────
-POLY_FILE        = Path("poly_markets.json")
-KALSHI_FILE      = Path("kalshi_markets.json")
+POLY_FILE        = Path("markets/poly_markets.json")
+KALSHI_FILE      = Path("markets/kalshi_markets.json")
 POLY_PAGE_SIZE   = 500
 KALSHI_PAGE_SIZE = 1000
 RETRY_DELAYS     = [5, 15, 30, 60]
@@ -83,7 +83,7 @@ def fetch_poly_markets():
                 "title":       title,
                 "id":          mid,
                 "slug":        m.get("slug", ""),
-                "description": (m.get("description") or "")[:300],
+                "description": (m.get("description") or ""),
                 "end_date":    m.get("endDate", ""),
                 "category":    m.get("category", ""),
                 "liquidity": m.get("liquidity"),
@@ -156,7 +156,7 @@ def fetch_kalshi_markets():
                 "ticker":       ticker,
                 "event_ticker": m.get("event_ticker", ""),
                 "subtitle":     m.get("subtitle", ""),
-                "rules":        (m.get("rules_primary") or "")[:300],
+                "rules":        (m.get("rules_primary") or ""),
                 "close_time":   m.get("close_time", ""),
                 "status":       m.get("status", ""),
                 "volume":       m.get("volume"),
