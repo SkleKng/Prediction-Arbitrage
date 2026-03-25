@@ -78,6 +78,7 @@ def fetch_poly_markets():
                 continue
             if not m.get("volumeNum") or m.get("volumeNum") < 10000:
                 continue
+            clob_ids = json.loads(m.get("clobTokenIds") or "[]")
             seen_ids.add(mid)
             markets.append({
                 "title":       title,
@@ -89,7 +90,8 @@ def fetch_poly_markets():
                 "liquidity": m.get("liquidity"),
                 "fee": m.get("fee"),
                 "outcomePrices": m.get("outcomePrices"),
-                "volumeNum": m.get("volumeNum")
+                "volumeNum": m.get("volumeNum"),
+                "clob_token_ids": json.loads(m.get("clobTokenIds") or "[]"),
             })
             added += 1
 

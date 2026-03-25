@@ -102,6 +102,7 @@ def format_poly(m):
         "fee":           m.get("fee"),
         "outcomePrices": m.get("outcomePrices"),
         "volumeNum":     m.get("volumeNum"),
+        "clob_token_ids": m.get("clob_token_ids")
     }
 
 def format_kalshi(m):
