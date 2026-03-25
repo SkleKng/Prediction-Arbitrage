@@ -112,9 +112,11 @@ def format_kalshi(m):
         "subtitle":        m.get("subtitle", ""),
         "rules":           m.get("rules", ""),
         "close_time":      m.get("close_time", ""),
-        "volume":          m.get("volume"),
+        "volume_fp":          m.get("volume_fp"),
         "rules_primary":   m.get("rules_primary", ""),
         "rules_secondary": m.get("rules_secondary", ""),
+        "yes_ask_dollars": m.get("yes_ask_dollars"),
+        "no_ask_dollars": m.get("no_ask_dollars")
     }
 
 def save_matches(all_matches, path):
