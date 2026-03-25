@@ -148,7 +148,7 @@ def fetch_kalshi_markets():
             title = (m.get("title") or m.get("yes_sub_title") or "").strip()
             if not title:
                 continue
-            if not m.get("volume") or m.get("volume") < 10000:
+            if not m.get("volume_fp") or float(m.get("volume_fp")) < 10000:
                 continue
             seen_tickers.add(ticker)
             markets.append({
@@ -159,9 +159,11 @@ def fetch_kalshi_markets():
                 "rules":        (m.get("rules_primary") or ""),
                 "close_time":   m.get("close_time", ""),
                 "status":       m.get("status", ""),
-                "volume":       m.get("volume"),
+                "volume_fp":       m.get("volume_fp"),
                 "rules_primary": m.get("rules_primary"),
-                "rules_secondary": m.get("rules_secondary")
+                "rules_secondary": m.get("rules_secondary"),
+                "yes_ask_dollars": m.get("yes_ask_dollars"),
+                "no_ask_dollars": m.get("no_ask_dollars")
             })
             added += 1
 
