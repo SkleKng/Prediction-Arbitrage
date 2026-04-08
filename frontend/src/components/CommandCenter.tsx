@@ -28,7 +28,7 @@ export function CommandCenter({
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       className="sticky top-0 z-50 glass border-b border-glass-border"
     >
-      <div className="max-w-[1800px] mx-auto px-6 py-3">
+      <div className="max-w-[1400px] mx-auto px-6 py-3">
         {/* Top row - Brand + Status */}
         <div className="flex items-center justify-between">
           {/* Brand */}
@@ -99,18 +99,6 @@ export function CommandCenter({
 
           {/* Spacer */}
           <div className="flex-1" />
-
-          {/* Live indicator */}
-          <div className="flex items-center gap-2">
-            <motion.div
-              className="w-1.5 h-1.5 rounded-full bg-neon-green"
-              animate={{ opacity: [1, 0.3, 1] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-            />
-            <span className="text-[10px] uppercase tracking-[0.15em] text-white/40 font-mono">
-              Live Feed
-            </span>
-          </div>
         </div>
       </div>
     </motion.header>
