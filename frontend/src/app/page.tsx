@@ -125,12 +125,49 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="border-t border-white/5 mt-auto">
+        <div className="w-full bg-obsidian border-b border-white/10 overflow-hidden py-2 flex items-center">
+          <div className="flex-1 overflow-hidden relative">
+            <motion.div 
+              className="flex whitespace-nowrap gap-8 px-4 text-[11px] font-mono text-white/80 font-bold uppercase tracking-widest"
+              animate={{ x: [0, -1000] }}
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            >
+              <span>AI RECONCILIATION</span>
+              <span className="text-white/30">♦</span>
+              <span>REAL-TIME SPREADS</span>
+              <span className="text-white/30">♦</span>
+              <span>EXECUTION READY</span>
+              <span className="text-white/30">♦</span>
+              <span>POLYMARKET × KALSHI</span>
+              <span className="text-white/30">♦</span>
+              <span>CROSS-PLATFORM DETECTION</span>
+              <span className="text-white/30">♦</span>
+              {/* Duplicate for seamless loop */}
+              <span>AI RECONCILIATION</span>
+              <span className="text-white/30">♦</span>
+              <span>REAL-TIME SPREADS</span>
+              <span className="text-white/30">♦</span>
+              <span>EXECUTION READY</span>
+              <span className="text-white/30">♦</span>
+              <span>POLYMARKET × KALSHI</span>
+              <span className="text-white/30">♦</span>
+              <span>CROSS-PLATFORM DETECTION</span>
+              <span className="text-white/30">♦</span>
+            </motion.div>
+          </div>
+        </div>
         <div className="max-w-[1400px] mx-auto px-6 py-4 flex items-center justify-between">
-          <span className="text-[10px] font-mono text-white/20 uppercase tracking-wider">
-            Prediction Arbitrage System v1.0
-          </span>
-          <span className="text-[10px] font-mono text-white/20">
-            Polymarket × Kalshi | AI-Powered Cross-Platform Detection
+          <div className="flex items-center gap-2">
+            <div className="w-4 h-4 rounded-full bg-white/10 flex items-center justify-center text-[8px] font-bold">N</div>
+            <span className="text-[10px] font-mono text-white/40 uppercase tracking-wider">
+              2026 AXIOM. ALL SYSTEMS OPERATIONAL.
+            </span>
+          </div>
+          <div className="text-[10px] font-mono text-white/40 uppercase tracking-wider border border-white/10 rounded-full px-4 py-1">
+            CRAFTED WITH ♥ FOR MARKETS
+          </div>
+          <span className="text-[10px] font-mono text-white/40 uppercase tracking-wider">
+            V1.0 · PREDICTION ARBITRAGE
           </span>
         </div>
       </footer>

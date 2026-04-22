@@ -25,36 +25,36 @@ export function AIReconciliationVisualizer({
       {/* Header bar */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <div className="p-2 rounded-lg bg-neon-purple/10 border border-neon-purple/20">
+          <div className="p-2 rounded-sm bg-neon-purple/10 border border-neon-purple/20">
             <Brain className="w-5 h-5 text-neon-purple" />
           </div>
           <div>
-            <h2 className="text-lg font-semibold text-white/90">
-              AI Reconciliation Engine
+            <h2 className="text-lg font-bold tracking-widest uppercase text-white/90">
+              AXIOM AI Reconciliation
             </h2>
-            <p className="text-xs text-white/30 font-mono">
-              Semantic embedding similarity via all-mpnet-base-v2
+            <p className="text-xs text-white/30 font-mono uppercase tracking-widest">
+              Neural Embedding Visualizer
             </p>
           </div>
         </div>
 
         {/* Pagination */}
         <div className="flex items-center gap-3">
-          <span className="text-xs font-mono text-white/40">
-            {activeIndex + 1} of {matches.length} pairs
+          <span className="text-xs font-mono text-white/40 uppercase tracking-widest">
+            {activeIndex + 1} OF {matches.length} PAIRS
           </span>
           <div className="flex items-center gap-1">
             <button
               onClick={() => setActiveIndex(Math.max(0, activeIndex - 1))}
               disabled={activeIndex === 0}
-              className="p-2 rounded-lg glass glass-hover disabled:opacity-20 transition-all"
+              className="p-2 rounded-sm bg-white/[0.02] border border-white/10 hover:border-white/30 disabled:opacity-20 transition-all"
             >
               <ChevronLeft className="w-4 h-4 text-white/60" />
             </button>
             <button
               onClick={() => setActiveIndex(Math.min(matches.length - 1, activeIndex + 1))}
               disabled={activeIndex === matches.length - 1}
-              className="p-2 rounded-lg glass glass-hover disabled:opacity-20 transition-all"
+              className="p-2 rounded-sm bg-white/[0.02] border border-white/10 hover:border-white/30 disabled:opacity-20 transition-all"
             >
               <ChevronRight className="w-4 h-4 text-white/60" />
             </button>
@@ -70,8 +70,10 @@ export function AIReconciliationVisualizer({
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.98, y: -12 }}
           transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-          className="glass rounded-2xl overflow-hidden"
+          className="bg-obsidian-light border border-white/10 rounded-sm overflow-hidden relative shadow-xl"
         >
+          {/* Background ambient glow */}
+          <div className="absolute inset-0 bg-gradient-to-b from-neon-purple/5 to-transparent opacity-30 pointer-events-none" />
           {/* Split pane — full width 3-column */}
           <div className="grid grid-cols-[1fr_200px_1fr] min-h-[280px]">
             {/* Polymarket side */}
@@ -274,9 +276,9 @@ export function AIReconciliationVisualizer({
             key={i}
             onClick={() => setActiveIndex(i)}
             className={cn(
-              "shrink-0 px-3 py-2 rounded-lg text-[10px] font-mono transition-all border",
+              "shrink-0 px-3 py-2 rounded-sm text-[10px] font-mono transition-all border",
               i === activeIndex
-                ? "bg-white/[0.08] border-white/[0.15] text-white/80"
+                ? "bg-white/[0.08] border-white/[0.2] text-white/80"
                 : "bg-white/[0.02] border-transparent text-white/30 hover:bg-white/[0.04] hover:text-white/50"
             )}
           >

@@ -61,13 +61,16 @@ export function ArbitrageFeed({ opportunities, compact = false }: ArbitrageFeedP
       {!compact && (
         <>
           {/* Feed header */}
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between mb-2">
             <div className="flex items-center gap-3">
-              <h2 className="text-base font-semibold text-white/90">
-                Live Arbitrage Feed
-              </h2>
-              <span className="text-xs font-mono text-white/30">
-                {filtered.length} opportunities
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-neon-green animate-pulse" />
+                <h2 className="text-lg font-bold text-white/95 tracking-tight uppercase">
+                  AXIOM Order Book
+                </h2>
+              </div>
+              <span className="text-[10px] font-mono text-neon-blue bg-neon-blue/10 px-2 py-1 rounded-md border border-neon-blue/20">
+                {filtered.length} ACTIVE PAIRS
               </span>
             </div>
           </div>
@@ -82,7 +85,7 @@ export function ArbitrageFeed({ opportunities, compact = false }: ArbitrageFeedP
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="Search markets, tickers..."
-                className="w-full pl-9 pr-4 py-2 bg-white/[0.03] border border-white/[0.08] rounded-lg text-sm font-mono text-white/80 placeholder:text-white/20 focus:outline-none focus:border-neon-blue/30 transition-colors"
+                className="w-full pl-9 pr-4 py-2 bg-white/[0.02] border border-white/[0.1] rounded-sm text-sm font-mono text-white/80 placeholder:text-white/20 focus:outline-none focus:border-neon-blue/30 transition-colors"
               />
             </div>
 
@@ -175,10 +178,10 @@ function FilterPill({
   return (
     <button
       onClick={onClick}
-      className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-mono transition-all ${
+      className={`flex items-center gap-1.5 px-3 py-1.5 rounded-sm text-[11px] font-mono uppercase tracking-wider transition-all ${
         active
-          ? "bg-white/[0.08] border border-white/[0.15] text-white/80"
-          : "bg-white/[0.02] border border-transparent text-white/40 hover:bg-white/[0.04]"
+          ? "bg-white/[0.08] border border-white/[0.2] text-white/80"
+          : "bg-white/[0.02] border border-white/5 text-white/40 hover:bg-white/[0.04]"
       }`}
     >
       <span>{label}</span>

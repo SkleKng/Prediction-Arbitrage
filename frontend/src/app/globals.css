@@ -115,9 +115,10 @@
   position: relative;
   color: white;
   text-shadow: 
-    -3px 0px 0px var(--color-axiom-cyan),
-    3px 0px 0px var(--color-axiom-magenta);
-  letter-spacing: -0.05em;
+    -4px 0px 0px var(--color-axiom-cyan),
+    4px 0px 0px var(--color-axiom-magenta);
+  letter-spacing: -0.02em;
+  font-weight: 900;
 }
 
 @keyframes gradient-flow {
