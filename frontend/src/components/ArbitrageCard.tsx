@@ -24,8 +24,26 @@ export function ArbitrageCard({ opportunity, index }: ArbitrageCardProps) {
   const isProfit = opportunity.spread > 0;
   const isHotSpread = opportunity.spread >= 2;
 
-  const polyYes = opportunity.polyPrice?.yes_ask ?? 0;
-  const kalshiYes = opportunity.kalshiPrice?.yes_ask ?? 0;
+  let polyDisplayPrice = opportunity.polyPrice?.yes_ask ?? 0;
+  let kalshiDisplayPrice = opportunity.kalshiPrice?.yes_ask ?? 0;
+  let polyLabel = "Poly YES";
+  let kalshiLabel = "Kalshi YES";
+
+  if (opportunity.direction === "poly_yes_kalshi_no") {
+    polyDisplayPrice = opportunity.polyPrice?.yes_ask ?? 0;
+    kalshiDisplayPrice = opportunity.kalshiPrice?.no_ask ?? 0;
+    polyLabel = "Poly YES (Ask)";
+    kalshiLabel = "Kalshi NO (Ask)";
+  } else if (opportunity.direction === "kalshi_yes_poly_no") {
+    polyDisplayPrice = opportunity.polyPrice?.no_ask ?? 0;
+    kalshiDisplayPrice = opportunity.kalshiPrice?.yes_ask ?? 0;
+    polyLabel = "Poly NO (Ask)";
+    kalshiLabel = "Kalshi YES (Ask)";
+  } else {
+    // Default to showing YES asks if no arbitrage
+    polyLabel = "Poly YES (Ask)";
+    kalshiLabel = "Kalshi YES (Ask)";
+  }
 
   return (
     <motion.div
@@ -39,8 +57,8 @@ export function ArbitrageCard({ opportunity, index }: ArbitrageCardProps) {
         ease: [0.22, 1, 0.36, 1],
       }}
       className={cn(
-        "glass glass-hover rounded-xl overflow-hidden transition-all duration-300 cursor-pointer",
-        isHotSpread && "glow-green border-neon-green/20"
+        "bg-obsidian-light rounded-sm overflow-hidden transition-all duration-200 cursor-pointer border border-white/10 hover:border-white/30",
+        isHotSpread && "border-neon-green/50 bg-neon-green/[0.02]"
       )}
       onClick={() => setExpanded(!expanded)}
     >
@@ -111,27 +129,27 @@ export function ArbitrageCard({ opportunity, index }: ArbitrageCardProps) {
             {/* Poly price */}
             <div className="text-right">
               <span className="text-[9px] uppercase tracking-wider text-white/30 block">
-                Poly YES
+                {polyLabel}
               </span>
               <span className="text-lg font-mono font-semibold text-neon-blue tabular-nums">
-                {polyYes.toFixed(3)}
+                {polyDisplayPrice.toFixed(3)}
               </span>
             </div>
 
             {/* Kalshi price */}
             <div className="text-right">
               <span className="text-[9px] uppercase tracking-wider text-white/30 block">
-                Kalshi YES
+                {kalshiLabel}
               </span>
               <span className="text-lg font-mono font-semibold text-neon-yellow tabular-nums">
-                {kalshiYes.toFixed(3)}
+                {kalshiDisplayPrice.toFixed(3)}
               </span>
             </div>
 
             {/* Spread */}
-            <div className="text-right min-w-[80px]">
-              <span className="text-[9px] uppercase tracking-wider text-white/30 block">
-                Profit/$1
+            <div className="text-right min-w-[90px] bg-white/5 p-2 rounded-sm border border-white/10">
+              <span className="text-[9px] uppercase tracking-widest text-white/40 block mb-1">
+                NET PROFIT
               </span>
               <span
                 className={cn(
@@ -244,14 +262,14 @@ function ExpandedContent({
 
           {/* Action hint */}
           <div className={cn(
-            "rounded-lg p-3 text-center text-xs font-mono",
+            "rounded-sm p-3 text-center text-xs font-mono font-bold tracking-widest uppercase",
             opportunity.spread >= 2
-              ? "bg-neon-green/5 border border-neon-green/20 text-neon-green"
+              ? "bg-neon-green/10 border border-neon-green/50 text-neon-green"
               : "bg-white/5 border border-white/10 text-white/40"
           )}>
             {opportunity.spread >= 2
-              ? "ACTIONABLE SPREAD DETECTED"
-              : "Monitoring spread convergence..."}
+              ? "⚡ EXECUTE ARBITRAGE"
+              : "MONITORING SPREAD CONVERGENCE"}
           </div>
         </div>
       </div>

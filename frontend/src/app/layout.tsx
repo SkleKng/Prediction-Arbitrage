@@ -15,8 +15,8 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Prediction Arbitrage | Command Center",
-  description: "Cross-Platform Prediction Market Arbitrage System",
+  title: "AXIOM | Command Center",
+  description: "Advanced Cross-Platform Prediction Market Arbitrage System",
 };
 
 export default function RootLayout({
@@ -31,9 +31,9 @@ export default function RootLayout({
       >
         <div className="relative min-h-screen">
           {/* Ambient background grid */}
-          <div className="bg-grid fixed inset-0 pointer-events-none opacity-40" />
+          <div className="bg-grid fixed inset-0 pointer-events-none opacity-20" />
           {/* Radial gradient vignette */}
-          <div className="fixed inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(10,10,15,0.8)_70%)]" />
+          <div className="fixed inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(5,5,5,0.9)_80%)]" />
           {/* Content */}
           <div className="relative z-10">{children}</div>
         </div>

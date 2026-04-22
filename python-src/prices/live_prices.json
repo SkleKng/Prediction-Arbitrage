@@ -1,372 +1,2222 @@
 {
-  "poly::Will Rahm Emanuel win the 2028 Democratic presidential nomination?": {
-    "yes_ask": 0.012,
-    "timestamp": "1774757631550",
-    "no_ask": 0.989
-  },
-  "kalshi::KXLEADERNBABLK-26-VWEM": {
-    "yes_ask": 0.99,
-    "no_ask": null,
-    "timestamp": "2026-03-29T04:13:53.597203Z"
-  },
-  "kalshi::KXSURVIVOR-26DEC31-CIR": {
-    "yes_ask": 0.08,
-    "no_ask": null,
-    "timestamp": "2026-03-29T04:14:09.080642Z"
-  },
-  "poly::Will Kimi Antonelli be the 2026 F1 Drivers' Champion?": {
-    "yes_ask": 0.336,
-    "timestamp": "1774757635310",
-    "no_ask": 0.677
-  },
-  "poly::Will the Golden State Warriors win the 2026 NBA Finals?": {
-    "yes_ask": 0.004,
-    "timestamp": "1774757631635",
-    "no_ask": 0.997
-  },
-  "kalshi::KXIPL-26-CSK": {
-    "yes_ask": 0.12,
-    "no_ask": null,
-    "timestamp": "2026-03-29T04:13:51.28448Z"
-  },
-  "poly::Will the Anaheim Ducks win the Western Conference?": {
-    "yes_ask": 0.084,
-    "timestamp": "1774757631836",
-    "no_ask": 0.937
-  },
-  "poly::Will the Buffalo Sabres win the Eastern Conference?": {
-    "yes_ask": 0.111,
-    "timestamp": "1774757648033",
-    "no_ask": 0.922
-  },
-  "kalshi::KXSENATELAR-26-JFLEM": {
-    "yes_ask": 0.2,
-    "no_ask": null,
-    "timestamp": "2026-03-29T04:13:52.107941Z"
-  },
-  "kalshi::KXRECSSNBER-26": {
-    "yes_ask": 0.36,
-    "no_ask": null,
-    "timestamp": "2026-03-29T04:13:52.15798Z"
-  },
-  "kalshi::KXSENATELAR-26-JLET": {
-    "yes_ask": 0.76,
-    "no_ask": null,
-    "timestamp": "2026-03-29T04:13:52.654816Z"
-  },
-  "poly::Will the Fed increase interest rates by 25+ bps after the April 2026 meeting?": {
-    "yes_ask": 0.019,
-    "timestamp": "1774757632939",
-    "no_ask": 0.982
-  },
-  "poly::Will the Fed decrease interest rates by 25 bps after the April 2026 meeting?": {
-    "yes_ask": 0.011,
-    "timestamp": "1774757632941",
-    "no_ask": 0.99
-  },
-  "poly::Will the Fed decrease interest rates by 50+ bps after the April 2026 meeting?": {
-    "yes_ask": 0.005,
-    "timestamp": "1774757642853",
-    "no_ask": 0.996
-  },
-  "poly::Will the Pittsburgh Penguins win the Eastern Conference?": {
-    "yes_ask": 0.054,
-    "timestamp": "1774757633586",
-    "no_ask": 0.963
-  },
-  "poly::Will the Vancouver Canucks win the 2025\u20132026 NHL Presidents' Trophy?": {
-    "yes_ask": 0.005,
-    "timestamp": "1774757649055",
-    "no_ask": 0.997
-  },
-  "poly::Will Manchester City finish in the top 4 of the EPL 2025\u201326 standings?": {
-    "yes_ask": 0.966,
-    "timestamp": "1774757649770",
-    "no_ask": 0.052
-  },
-  "poly::Will Aston Villa finish in the top 4 of the EPL 2025\u201326 standings?": {
-    "yes_ask": 0.639,
-    "timestamp": "1774757633708",
-    "no_ask": 0.383
-  },
-  "kalshi::KXMARMAD-26-DUKE": {
-    "yes_ask": 0.19,
-    "no_ask": null,
-    "timestamp": "2026-03-29T04:14:09.623228Z"
-  },
-  "kalshi::KXCOLOMBIAPRESR1-26MAY31-AESP": {
+  "poly::Will Alexander Zverev be the 2026 Men\u2019s Wimbledon winner?": {
     "yes_ask": 0.05,
-    "no_ask": null,
-    "timestamp": "2026-03-29T04:13:53.079365Z"
+    "timestamp": "1776816735790",
+    "no_ask": 0.97
   },
-  "poly::Will the Montreal Canadiens win the 2026 NHL Stanley Cup?": {
-    "yes_ask": 0.044,
-    "timestamp": "1774757633968",
-    "no_ask": 0.957
-  },
-  "poly::Israel and Lebanon normalize relations before 2027?": {
-    "yes_ask": 0.28,
-    "timestamp": "1774757634002",
-    "no_ask": 0.8
-  },
-  "kalshi::KXMUSKOAI-26": {
-    "yes_ask": 0.46,
-    "no_ask": null,
-    "timestamp": "2026-03-29T04:13:53.901474Z"
-  },
-  "kalshi::KXMARMAD-26-ARIZ": {
-    "yes_ask": 0.37,
-    "no_ask": null,
-    "timestamp": "2026-03-29T04:14:10.369198Z"
-  },
-  "poly::Will Fidesz-KDNP win 115-129 seats in the Hungarian National Assembly in this election?": {
-    "yes_ask": 0.14,
-    "timestamp": "1774757634829",
-    "no_ask": 0.88
-  },
-  "poly::Will Illinois win the 2026 NCAA Tournament?": {
-    "yes_ask": 0.142,
-    "timestamp": "1774757639282",
-    "no_ask": 0.86
-  },
-  "kalshi::KXMARMAD-26-ILL": {
-    "yes_ask": 0.16,
-    "no_ask": null,
-    "timestamp": "2026-03-29T04:13:59.693549Z"
-  },
-  "kalshi::KXNHL-26-LA": {
-    "yes_ask": 0.02,
-    "no_ask": null,
-    "timestamp": "2026-03-29T04:14:08.067455Z"
-  },
-  "kalshi::KXNHL-26-VGK": {
-    "yes_ask": 0.06,
-    "no_ask": null,
-    "timestamp": "2026-03-29T04:13:58.858119Z"
-  },
-  "poly::Will Gretchen Whitmer win the 2028 Democratic presidential nomination?": {
-    "yes_ask": 0.015,
-    "timestamp": "1774757642257",
-    "no_ask": 0.986
-  },
-  "poly::Will Dee Valladares win Survivor Season 50?": {
-    "yes_ask": 0.006,
-    "timestamp": "1774757645119",
-    "no_ask": 0.996
-  },
-  "poly::Will Audi be the 2026 F1 Constructors' Champion?": {
-    "yes_ask": 0.005,
-    "timestamp": "1774757636426",
-    "no_ask": 0.996
-  },
-  "poly::Will Trump recognize Somaliland before 2027?": {
-    "yes_ask": 0.226,
-    "timestamp": "1774757636653",
-    "no_ask": 0.789
-  },
-  "poly::Will Isack Hadjar be the 2026 F1 Drivers' Champion?": {
-    "yes_ask": 0.004,
-    "timestamp": "1774757636693",
-    "no_ask": 0.997
-  },
-  "kalshi::KXCHESSCANDIDATES-26-FCAR": {
-    "yes_ask": 0.34,
-    "no_ask": null,
-    "timestamp": "2026-03-29T04:13:56.7539Z"
-  },
-  "poly::Will Nicol\u00e1s Maduro be the leader of Venezuela end of 2026?": {
-    "yes_ask": 0.184,
-    "timestamp": "1774757649637",
-    "no_ask": 0.833
-  },
-  "poly::Will San Diego FC win the 2026 MLS Cup?": {
-    "yes_ask": 0.089,
-    "timestamp": "1774757650610",
-    "no_ask": 0.933
-  },
-  "poly::Will Bernie Sanders win the 2028 Democratic presidential nomination?": {
-    "yes_ask": 0.006,
-    "timestamp": "1774757648996",
-    "no_ask": 0.995
-  },
-  "poly::Will Morocco win the 2026 FIFA World Cup?": {
-    "yes_ask": 0.017,
-    "timestamp": "1774757638275",
-    "no_ask": 0.984
-  },
-  "kalshi::KXFEDDECISION-26APR-C25": {
-    "yes_ask": 0.03,
-    "no_ask": null,
-    "timestamp": "2026-03-29T04:13:57.981017Z"
-  },
-  "kalshi::KXEPLRELEGATION-26-LEE": {
-    "yes_ask": 0.13,
-    "no_ask": null,
-    "timestamp": "2026-03-29T04:13:58.000635Z"
-  },
-  "kalshi::KXGOVFLNOMR-26-BD": {
-    "yes_ask": 0.83,
-    "no_ask": null,
-    "timestamp": "2026-03-29T04:13:59.000998Z"
-  },
-  "kalshi::KXNBA-26-BOS": {
-    "yes_ask": 0.14,
-    "no_ask": null,
-    "timestamp": "2026-03-29T04:13:59.15721Z"
-  },
-  "poly::Will France win the 2026 FIFA World Cup?": {
-    "yes_ask": 0.109,
-    "timestamp": "1774757640536",
-    "no_ask": 0.892
-  },
-  "poly::Will Aston Martin be the 2026 F1 Constructors' Champion?": {
-    "yes_ask": 0.005,
-    "timestamp": "1774757640995",
-    "no_ask": 0.996
-  },
-  "poly::Will the Fed decrease interest rates by 50+ bps after the June 2026 meeting?": {
-    "yes_ask": 0.015,
-    "timestamp": "1774757641278",
-    "no_ask": 0.986
-  },
-  "poly::Will Tim Walz win the 2028 Democratic presidential nomination?": {
-    "yes_ask": 0.007,
-    "timestamp": "1774757642788",
-    "no_ask": 0.994
-  },
-  "kalshi::KXBRPRES-26-LULA": {
-    "yes_ask": 0.41,
-    "no_ask": null,
-    "timestamp": "2026-03-29T04:14:07.263356Z"
-  },
-  "kalshi::KXBOND-30-JACO": {
-    "yes_ask": 0.23,
-    "no_ask": null,
-    "timestamp": "2026-03-29T04:14:02.856589Z"
-  },
-  "kalshi::KXMUSKTRILLION-27": {
-    "yes_ask": 0.79,
-    "no_ask": null,
-    "timestamp": "2026-03-29T04:14:06.86237Z"
-  },
-  "kalshi::KXCABOUT-26MAR-LCDR": {
-    "yes_ask": 0.68,
-    "no_ask": null,
-    "timestamp": "2026-03-29T04:14:07.224046Z"
-  },
-  "poly::Will March 2026 be the 1st hottest on record?": {
+  "poly::Will Chris Murphy win the 2028 Democratic presidential nomination?": {
     "yes_ask": 0.008,
-    "timestamp": "1774757644209",
-    "no_ask": 0.996
-  },
-  "poly::Will the Portland Trail Blazers win the 2026 NBA Finals?": {
-    "yes_ask": 0.004,
-    "timestamp": "1774757644254",
-    "no_ask": 0.997
-  },
-  "poly::Will Robert F. Kennedy Jr. win the 2028 Republican presidential nomination?": {
-    "yes_ask": 0.009,
-    "timestamp": "1774757644720",
-    "no_ask": 0.992
-  },
-  "kalshi::KXNBAEAST-26-PHI": {
-    "yes_ask": 0.04,
-    "no_ask": null,
-    "timestamp": "2026-03-29T04:14:04.522369Z"
-  },
-  "kalshi::KXPREMIERLEAGUE-26-AVL": {
-    "yes_ask": 0.01,
-    "no_ask": null,
-    "timestamp": "2026-03-29T04:14:04.570749Z"
-  },
-  "kalshi::KXPRESNOMD-28-GN": {
-    "yes_ask": 0.3,
-    "no_ask": null,
-    "timestamp": "2026-03-29T04:14:04.633771Z"
-  },
-  "kalshi::CONTROLS-2026-R": {
-    "yes_ask": 0.529,
-    "no_ask": null,
-    "timestamp": "2026-03-29T04:14:05.162768Z"
-  },
-  "poly::Will Beto O\u2019Rourke win the 2028 Democratic presidential nomination?": {
-    "yes_ask": 0.006,
-    "timestamp": "1774757645747",
-    "no_ask": 0.995
-  },
-  "kalshi::KXSURVIVOR-26DEC31-CHR": {
-    "yes_ask": 0.01,
-    "no_ask": null,
-    "timestamp": "2026-03-29T04:14:05.252336Z"
-  },
-  "kalshi::KXSURVIVOR-26DEC31-CHA": {
-    "yes_ask": 0.01,
-    "no_ask": null,
-    "timestamp": "2026-03-29T04:14:05.276097Z"
-  },
-  "kalshi::KXSURVIVOR-26DEC31-ANG": {
-    "yes_ask": 0.01,
-    "no_ask": null,
-    "timestamp": "2026-03-29T04:14:05.276516Z"
-  },
-  "kalshi::KXSURVIVOR-26DEC31-AUB": {
-    "yes_ask": 0.85,
-    "no_ask": null,
-    "timestamp": "2026-03-29T04:14:05.276555Z"
-  },
-  "kalshi::KXSERIEA-26-ACM": {
-    "yes_ask": 0.09,
-    "no_ask": null,
-    "timestamp": "2026-03-29T04:14:05.447846Z"
-  },
-  "poly::Will Cason Wallace lead the NBA in steals during the 2025\u201326 NBA season?": {
-    "yes_ask": 0.32,
-    "timestamp": "1774757646693",
-    "no_ask": 0.8
-  },
-  "poly::Will Hillary Clinton win the 2028 Democratic presidential nomination?": {
-    "yes_ask": 0.008,
-    "timestamp": "1774757646710",
+    "timestamp": "1776817329508",
     "no_ask": 0.993
   },
-  "kalshi::KXMARMAD-26-TENN": {
-    "yes_ask": 0.03,
-    "no_ask": null,
-    "timestamp": "2026-03-29T04:14:06.4449Z"
+  "poly::Will Fernando Haddad finish in second place in the first round of the 2026 Brazilian presidential election?": {
+    "yes_ask": 0.058,
+    "timestamp": "1776817355858",
+    "no_ask": 0.968
   },
-  "kalshi::KXSURVIVOR-26DEC31-CHRI": {
+  "poly::Will the Montreal Canadiens win the 2026 NHL Stanley Cup?": {
+    "yes_ask": 0.057,
+    "timestamp": "1776817366140",
+    "no_ask": 0.949
+  },
+  "poly::Will the Buffalo Sabres win the Eastern Conference?": {
+    "yes_ask": 0.17,
+    "timestamp": "1776817377144",
+    "no_ask": 0.854
+  },
+  "kalshi::KXNHL-26-BUF": {
+    "yes_ask": 0.07,
+    "no_ask": 0.94,
+    "timestamp": "2026-04-22T00:11:47.598707Z"
+  },
+  "kalshi::KXPREMIERLEAGUE-26-ARS": {
+    "yes_ask": 0.43,
+    "no_ask": 0.58,
+    "timestamp": "2026-04-22T00:23:07.184647Z"
+  },
+  "kalshi::KXFEDDECISION-26JUN-H25": {
+    "yes_ask": 0.04,
+    "no_ask": 0.98,
+    "timestamp": "2026-04-22T00:23:12.027334Z"
+  },
+  "poly::Will the Virginia redistricting referendum pass?": {
+    "yes_ask": 0.998,
+    "timestamp": "1776817352597",
+    "no_ask": 0.003
+  },
+  "poly::Will Trump endorse Ken Paxton for TX-Sen by Nov 2 2026 ET?": {
+    "yes_ask": 0.863,
+    "timestamp": "1776817350057",
+    "no_ask": 0.9
+  },
+  "poly::Will Ecuador win the 2026 FIFA World Cup?": {
+    "yes_ask": 0.007,
+    "timestamp": "1776816773827",
+    "no_ask": 0.994
+  },
+  "poly::Will Aston Villa finish in the top 4 of the EPL 2025\u201326 standings?": {
+    "yes_ask": 0.636,
+    "timestamp": "1776815049487",
+    "no_ask": 0.374
+  },
+  "poly::Will SpaceX have between 160-179 launches in 2026?": {
+    "yes_ask": 0.52,
+    "timestamp": "1776816906690",
+    "no_ask": 0.62
+  },
+  "poly::Will SpaceX have between 140-159 launches in 2026?": {
+    "yes_ask": 0.404,
+    "timestamp": "1776815021295",
+    "no_ask": 0.699
+  },
+  "poly::Will John Fleming be the republican nominee for Senate in Louisiana?": {
+    "yes_ask": 0.252,
+    "timestamp": "1776817335510",
+    "no_ask": 0.766
+  },
+  "poly::Will Roberto S\u00e1nchez Palomino win the 2026 Peruvian presidential election?": {
+    "yes_ask": 0.24,
+    "timestamp": "1776817383599",
+    "no_ask": 0.766
+  },
+  "kalshi::KXVIRGINIAREDISTRICTING-26": {
+    "yes_ask": 0.997,
+    "no_ask": 0.004,
+    "timestamp": "2026-04-22T00:22:47.53453Z"
+  },
+  "poly::Will Josh Shapiro win the 2028 Democratic presidential nomination?": {
+    "yes_ask": 0.037,
+    "timestamp": "1776816837123",
+    "no_ask": 0.964
+  },
+  "kalshi::KXSB-27-NO": {
     "yes_ask": 0.01,
-    "no_ask": null,
-    "timestamp": "2026-03-29T04:14:06.717445Z"
+    "no_ask": 1.0,
+    "timestamp": "2026-04-21T23:43:34.390878Z"
+  },
+  "kalshi::KXSB-27-HOU": {
+    "yes_ask": 0.04,
+    "no_ask": 0.97,
+    "timestamp": "2026-04-22T00:14:48.348946Z"
+  },
+  "kalshi::KXNHL-26-TB": {
+    "yes_ask": 0.1,
+    "no_ask": 0.91,
+    "timestamp": "2026-04-22T00:23:00.765191Z"
+  },
+  "poly::Will the Dallas Stars win the 2026 NHL Stanley Cup?": {
+    "yes_ask": 0.056,
+    "timestamp": "1776816849839",
+    "no_ask": 0.946
+  },
+  "kalshi::KXNHL-26-MIN": {
+    "yes_ask": 0.06,
+    "no_ask": 0.95,
+    "timestamp": "2026-04-22T00:22:54.894046Z"
+  },
+  "poly::Will Renan Santos win the 2026 Brazilian presidential election?": {
+    "yes_ask": 0.061,
+    "timestamp": "1776817118459",
+    "no_ask": 0.94
+  },
+  "kalshi::KXTXRUNOFFENDORSE-26MAY26-DJT-JCOR": {
+    "yes_ask": 0.34,
+    "no_ask": 0.7,
+    "timestamp": "2026-04-22T00:23:02.558231Z"
+  },
+  "poly::Will the Minnesota Timberwolves win the 2026 NBA Finals?": {
+    "yes_ask": 0.014,
+    "timestamp": "1776817167455",
+    "no_ask": 0.987
+  },
+  "poly::Will the Democratic Party control the Senate after the 2026 Midterm elections?": {
+    "yes_ask": 0.53,
+    "timestamp": "1776817385454",
+    "no_ask": 0.48
+  },
+  "poly::Will Lorenzo Musetti win the 2026 Men's French Open?": {
+    "yes_ask": 0.02,
+    "timestamp": "1776817380632",
+    "no_ask": 0.984
+  },
+  "kalshi::KXSURVIVOR-26DEC31-JON": {
+    "yes_ask": 0.04,
+    "no_ask": 0.97,
+    "timestamp": "2026-04-22T00:23:08.343007Z"
+  },
+  "kalshi::CONTROLH-2026-D": {
+    "yes_ask": 0.86,
+    "no_ask": 0.15,
+    "timestamp": "2026-04-22T00:23:08.93926Z"
+  },
+  "kalshi::KXNBA-26-ORL": {
+    "yes_ask": 0.01,
+    "no_ask": 1.0,
+    "timestamp": "2026-04-22T00:20:04.553274Z"
+  },
+  "poly::Will Jannik Sinner win the 2026 Men's French Open?": {
+    "yes_ask": 0.57,
+    "timestamp": "1776817146971",
+    "no_ask": 0.45
+  },
+  "poly::Will the Cleveland Cavaliers win the 2026 NBA Finals?": {
+    "yes_ask": 0.044,
+    "timestamp": "1776817311022",
+    "no_ask": 0.958
+  },
+  "kalshi::KXTOPAI-27-JAN01-OPEN": {
+    "yes_ask": 0.65,
+    "no_ask": 0.39,
+    "timestamp": "2026-04-22T00:22:42.688531Z"
+  },
+  "kalshi::KXFOMEN-26-SIN": {
+    "yes_ask": 0.6,
+    "no_ask": 0.41,
+    "timestamp": "2026-04-22T00:21:43.526373Z"
+  },
+  "kalshi::KXALIENS-27": {
+    "yes_ask": 0.22,
+    "no_ask": 0.783,
+    "timestamp": "2026-04-22T00:21:29.215174Z"
+  },
+  "kalshi::KXSENATEMED-26-JM": {
+    "yes_ask": 0.097,
+    "no_ask": 0.904,
+    "timestamp": "2026-04-22T00:13:26.262311Z"
+  },
+  "poly::Will the Republicans win the Nebraska Senate race in 2026?": {
+    "yes_ask": 0.74,
+    "timestamp": "1776817175321",
+    "no_ask": 0.27
+  },
+  "kalshi::KXVENEZUELALEADER2-26JUN01-DROD": {
+    "yes_ask": 0.079,
+    "no_ask": 0.94,
+    "timestamp": "2026-04-22T00:12:40.111055Z"
   },
   "kalshi::KXNBA-26-SAS": {
     "yes_ask": 0.16,
-    "no_ask": null,
-    "timestamp": "2026-03-29T04:14:06.765612Z"
+    "no_ask": 0.85,
+    "timestamp": "2026-04-22T00:23:05.103348Z"
   },
-  "poly::Will the Denver Broncos win the 2027 NFL league championship?": {
-    "yes_ask": 0.038,
-    "timestamp": "1774757647574",
-    "no_ask": 0.963
-  },
-  "kalshi::KXNBA-26-LAL": {
+  "kalshi::KXNBA-26-CLE": {
     "yes_ask": 0.05,
-    "no_ask": null,
-    "timestamp": "2026-03-29T04:14:08.2188Z"
+    "no_ask": 0.96,
+    "timestamp": "2026-04-22T00:20:25.703616Z"
   },
-  "kalshi::KXLEADERNBASTL-26-ATHO": {
+  "kalshi::KXNHL-26-MTL": {
+    "yes_ask": 0.05,
+    "no_ask": 0.96,
+    "timestamp": "2026-04-22T00:23:04.609704Z"
+  },
+  "poly::Will Nicol\u00e1s Maduro be the leader of Venezuela end of 2026?": {
+    "yes_ask": 0.547,
+    "timestamp": "1776817347276",
+    "no_ask": 0.479
+  },
+  "poly::Will the Boston Celtics win the 2026 NBA Finals?": {
+    "yes_ask": 0.144,
+    "timestamp": "1776817349833",
+    "no_ask": 0.858
+  },
+  "kalshi::KXBTCVSGOLD-26": {
+    "yes_ask": 0.389,
+    "no_ask": 0.663,
+    "timestamp": "2026-04-22T00:15:45.018055Z"
+  },
+  "poly::Will Donald Trump visit China in 2026?": {
+    "yes_ask": 0.941,
+    "timestamp": "1776816703081",
+    "no_ask": 0.068
+  },
+  "poly::Will Andy Burnham be the next Prime Minister of the United Kingdom in 2026?": {
+    "yes_ask": 0.108,
+    "timestamp": "1776817307938",
+    "no_ask": 0.94
+  },
+  "poly::Will there be at least 10000 measles cases in the U.S. in 2026?": {
+    "yes_ask": 0.103,
+    "timestamp": "1776816681453",
+    "no_ask": 0.898
+  },
+  "kalshi::KXBOND-30-HC": {
+    "yes_ask": 0.03,
+    "no_ask": 0.98,
+    "timestamp": "2026-04-22T00:20:21.363122Z"
+  },
+  "kalshi::KXBESTLLMCHINA-27": {
+    "yes_ask": 0.2,
+    "no_ask": 0.81,
+    "timestamp": "2026-04-22T00:18:21.488672Z"
+  },
+  "kalshi::KXVENEZUELALEADER2-26JUN01-MCM": {
+    "yes_ask": 0.02,
+    "no_ask": 1.0,
+    "timestamp": "2026-04-22T00:11:42.814262Z"
+  },
+  "kalshi::KXLALIGA-26-BAR": {
+    "yes_ask": 0.97,
+    "no_ask": 0.05,
+    "timestamp": "2026-04-22T00:23:09.085705Z"
+  },
+  "kalshi::KXF1CONSTRUCTORS-26-MCL": {
+    "yes_ask": 0.08,
+    "no_ask": 0.93,
+    "timestamp": "2026-04-21T23:43:56.230777Z"
+  },
+  "kalshi::KXTOPAI-27-JAN01-XAI": {
+    "yes_ask": 0.33,
+    "no_ask": 0.71,
+    "timestamp": "2026-04-22T00:12:32.177066Z"
+  },
+  "kalshi::KXMLBAL-26-SEA": {
     "yes_ask": 0.17,
-    "no_ask": null,
-    "timestamp": "2026-03-29T04:14:08.734539Z"
+    "no_ask": 0.84,
+    "timestamp": "2026-04-22T00:22:14.69605Z"
   },
-  "poly::Will DeepSeek have the best AI model at the end of April 2026?": {
+  "kalshi::KXF1CONSTRUCTORS-26-FER": {
+    "yes_ask": 0.13,
+    "no_ask": 0.88,
+    "timestamp": "2026-04-21T23:45:19.767663Z"
+  },
+  "kalshi::KXSPACEXCOUNT-26B-190": {
+    "yes_ask": 0.09,
+    "no_ask": 0.96,
+    "timestamp": "2026-04-22T00:22:59.411937Z"
+  },
+  "poly::Will Julie Johnson be the Democratic nominee for TX-33?": {
+    "yes_ask": 0.26,
+    "timestamp": "1776815044003",
+    "no_ask": 0.75
+  },
+  "kalshi::KXOAIANTH-40-OAI": {
+    "yes_ask": 0.38,
+    "no_ask": 0.67,
+    "timestamp": "2026-04-22T00:13:20.090603Z"
+  },
+  "kalshi::KXAKSENATE-26NOV03-MPEL": {
+    "yes_ask": 0.61,
+    "no_ask": 0.4,
+    "timestamp": "2026-04-22T00:14:17.368933Z"
+  },
+  "kalshi::CONTROLS-2026-D": {
+    "yes_ask": 0.51,
+    "no_ask": 0.5,
+    "timestamp": "2026-04-22T00:14:35.036952Z"
+  },
+  "poly::Will Manchester United finish in 2nd place in the 2025-26 English Premier League?": {
+    "yes_ask": 0.008,
+    "timestamp": "1776817110314",
+    "no_ask": 0.998
+  },
+  "kalshi::KXGOVFLNOMR-26-BD": {
+    "yes_ask": 0.83,
+    "no_ask": 0.18,
+    "timestamp": "2026-04-22T00:17:25.334774Z"
+  },
+  "poly::Will Greg Abbott win the 2028 Republican presidential nomination?": {
+    "yes_ask": 0.01,
+    "timestamp": "1776816106243",
+    "no_ask": 0.991
+  },
+  "poly::Will the Cincinnati Reds win the 2026 World Series?": {
+    "yes_ask": 0.012,
+    "timestamp": "1776816442065",
+    "no_ask": 0.989
+  },
+  "kalshi::KXMLBNL-26-MIL": {
+    "yes_ask": 0.05,
+    "no_ask": 0.96,
+    "timestamp": "2026-04-22T00:22:14.576221Z"
+  },
+  "kalshi::KXMLBNL-26-SD": {
+    "yes_ask": 0.05,
+    "no_ask": 0.96,
+    "timestamp": "2026-04-22T00:22:32.699215Z"
+  },
+  "kalshi::KXMLBAL-26-BOS": {
+    "yes_ask": 0.08,
+    "no_ask": 0.93,
+    "timestamp": "2026-04-22T00:22:14.759267Z"
+  },
+  "kalshi::KXLALIGA-26-RMA": {
+    "yes_ask": 0.06,
+    "no_ask": 0.95,
+    "timestamp": "2026-04-22T00:22:35.312403Z"
+  },
+  "kalshi::KXMENWORLDCUP-26-PT": {
+    "yes_ask": 0.077,
+    "no_ask": 0.924,
+    "timestamp": "2026-04-22T00:22:15.349046Z"
+  },
+  "poly::Will Spain win the 2026 FIFA World Cup?": {
+    "yes_ask": 0.163,
+    "timestamp": "1776817310859",
+    "no_ask": 0.838
+  },
+  "kalshi::KXABRAHAMSA-27-JAN01-LEB": {
+    "yes_ask": 0.29,
+    "no_ask": 0.73,
+    "timestamp": "2026-04-22T00:15:39.328382Z"
+  },
+  "poly::Will the San Francisco 49ers win the 2027 NFL league championship?": {
+    "yes_ask": 0.042,
+    "timestamp": "1776816483370",
+    "no_ask": 0.959
+  },
+  "kalshi::KXTRUMPIRAN-26JUN01": {
+    "yes_ask": 0.039,
+    "no_ask": 0.97,
+    "timestamp": "2026-04-22T00:12:44.251324Z"
+  },
+  "kalshi::KXALBERTAREFYES-29": {
+    "yes_ask": 0.25,
+    "no_ask": 0.79,
+    "timestamp": "2026-04-22T00:13:16.957088Z"
+  },
+  "kalshi::KXNBA-26-OKC": {
+    "yes_ask": 0.5,
+    "no_ask": 0.51,
+    "timestamp": "2026-04-22T00:22:05.79294Z"
+  },
+  "kalshi::KXSB-27-SEA": {
+    "yes_ask": 0.09,
+    "no_ask": 0.92,
+    "timestamp": "2026-04-22T00:22:30.028325Z"
+  },
+  "kalshi::KXEPLRELEGATION-26-NFO": {
+    "yes_ask": 0.1,
+    "no_ask": 0.91,
+    "timestamp": "2026-04-22T00:22:28.687857Z"
+  },
+  "kalshi::KXNHL-26-VGK": {
+    "yes_ask": 0.08,
+    "no_ask": 0.93,
+    "timestamp": "2026-04-22T00:22:19.084994Z"
+  },
+  "kalshi::KXNHL-26-DAL": {
+    "yes_ask": 0.06,
+    "no_ask": 0.95,
+    "timestamp": "2026-04-22T00:22:19.097653Z"
+  },
+  "poly::Will the Fed decrease interest rates by 50+ bps after the April 2026 meeting?": {
+    "yes_ask": 0.002,
+    "timestamp": "1776817378274",
+    "no_ask": 0.999
+  },
+  "poly::Will Abelardo de la Espriella win the 1st round of the 2026 Colombian presidential election?": {
+    "yes_ask": 0.093,
+    "timestamp": "1776817241678",
+    "no_ask": 0.913
+  },
+  "kalshi::KXNHL-26-PIT": {
+    "yes_ask": 0.02,
+    "no_ask": 0.99,
+    "timestamp": "2026-04-22T00:22:19.072203Z"
+  },
+  "kalshi::KXNHL-26-EDM": {
+    "yes_ask": 0.09,
+    "no_ask": 0.92,
+    "timestamp": "2026-04-22T00:22:19.112184Z"
+  },
+  "kalshi::KXNHL-26-PHI": {
+    "yes_ask": 0.04,
+    "no_ask": 0.97,
+    "timestamp": "2026-04-22T00:22:19.050227Z"
+  },
+  "kalshi::KXMUSKOAI-26": {
+    "yes_ask": 0.48,
+    "no_ask": 0.53,
+    "timestamp": "2026-04-22T00:09:22.531759Z"
+  },
+  "kalshi::KXSURVIVOR-26DEC31-AUB": {
+    "yes_ask": 0.77,
+    "no_ask": 0.24,
+    "timestamp": "2026-04-22T00:22:58.020629Z"
+  },
+  "poly::Will the Cincinnati Bengals win the 2027 NFL league championship?": {
+    "yes_ask": 0.028,
+    "timestamp": "1776815070870",
+    "no_ask": 0.974
+  },
+  "kalshi::KXSURVIVOR-26DEC31-RIC": {
+    "yes_ask": 0.01,
+    "no_ask": 1.0,
+    "timestamp": "2026-04-22T00:13:07.037558Z"
+  },
+  "kalshi::KXSB-27-PIT": {
+    "yes_ask": 0.02,
+    "no_ask": 0.99,
+    "timestamp": "2026-04-22T00:13:07.03825Z"
+  },
+  "kalshi::KXNHL-26-ANA": {
+    "yes_ask": 0.01,
+    "no_ask": 1.0,
+    "timestamp": "2026-04-22T00:19:04.865846Z"
+  },
+  "kalshi::KXFRENCHPRES-27-JBAR": {
+    "yes_ask": 0.27,
+    "no_ask": 0.75,
+    "timestamp": "2026-04-22T00:12:50.496065Z"
+  },
+  "kalshi::KXTOPARTISTUSA-26-TAY": {
+    "yes_ask": 0.08,
+    "no_ask": 0.93,
+    "timestamp": "2026-04-22T00:15:05.914314Z"
+  },
+  "kalshi::KXSENATEFLD-26-JM": {
+    "yes_ask": 0.11,
+    "no_ask": 0.952,
+    "timestamp": "2026-04-22T00:22:12.538881Z"
+  },
+  "poly::Will Rafael L\u00f3pez Aliaga win the 2026 Peruvian presidential election?": {
+    "yes_ask": 0.05,
+    "timestamp": "1776817254066",
+    "no_ask": 0.953
+  },
+  "poly::Will Tarcisio de Freitas win the 2026 Brazilian presidential election?": {
+    "yes_ask": 0.004,
+    "timestamp": "1776816965518",
+    "no_ask": 0.997
+  },
+  "kalshi::KXLIGUE1-26-RCL": {
+    "yes_ask": 0.07,
+    "no_ask": 0.94,
+    "timestamp": "2026-04-21T23:44:32.888601Z"
+  },
+  "kalshi::KXSENATESCR-26-LGRA": {
+    "yes_ask": 0.87,
+    "no_ask": 0.14,
+    "timestamp": "2026-04-22T00:14:45.492684Z"
+  },
+  "kalshi::KXTRUMPOUT27-27-26AUG01": {
+    "yes_ask": 0.078,
+    "no_ask": 0.93,
+    "timestamp": "2026-04-21T23:44:36.332556Z"
+  },
+  "kalshi::KXFOMEN-26-MUS": {
+    "yes_ask": 0.03,
+    "no_ask": 0.99,
+    "timestamp": "2026-04-22T00:11:45.326535Z"
+  },
+  "kalshi::KXPRESNOMD-28-JOSS": {
+    "yes_ask": 0.087,
+    "no_ask": 0.919,
+    "timestamp": "2026-04-22T00:22:40.553928Z"
+  },
+  "kalshi::KXPRESNOMR-28-MR": {
+    "yes_ask": 0.26,
+    "no_ask": 0.75,
+    "timestamp": "2026-04-22T00:18:55.949391Z"
+  },
+  "kalshi::KXLIGUE1-26-PSG": {
+    "yes_ask": 0.95,
+    "no_ask": 0.07,
+    "timestamp": "2026-04-22T00:21:42.455477Z"
+  },
+  "kalshi::KXPRESNOMD-28-HBID": {
+    "yes_ask": 0.002,
+    "no_ask": 0.999,
+    "timestamp": "2026-04-22T00:22:43.069469Z"
+  },
+  "kalshi::KXPRESNOMD-28-HCLI": {
+    "yes_ask": 0.002,
+    "no_ask": 0.999,
+    "timestamp": "2026-04-22T00:22:43.084333Z"
+  },
+  "kalshi::KXPRESNOMD-28-WM": {
+    "yes_ask": 0.021,
+    "no_ask": 0.98,
+    "timestamp": "2026-04-22T00:22:43.008154Z"
+  },
+  "kalshi::KXPRESNOMD-28-BS": {
+    "yes_ask": 0.002,
+    "no_ask": 0.999,
+    "timestamp": "2026-04-22T00:22:43.038049Z"
+  },
+  "kalshi::KXMUSKTRILLION-27": {
+    "yes_ask": 0.76,
+    "no_ask": 0.25,
+    "timestamp": "2026-04-22T00:20:28.736243Z"
+  },
+  "kalshi::KXWCGOALLEADER-26-KMBA": {
+    "yes_ask": 0.24,
+    "no_ask": 0.83,
+    "timestamp": "2026-04-22T00:13:40.742802Z"
+  },
+  "kalshi::KXGOVGANOMD-26-KLB": {
+    "yes_ask": 0.68,
+    "no_ask": 0.33,
+    "timestamp": "2026-04-22T00:21:36.047695Z"
+  },
+  "kalshi::KXSPOTIFYALBUMRELEASEDATEDRAKE-26-MAY01": {
+    "yes_ask": 0.02,
+    "no_ask": 0.99,
+    "timestamp": "2026-04-22T00:22:23.94263Z"
+  },
+  "poly::Will USA win the 2026 FIFA World Cup?": {
+    "yes_ask": 0.013,
+    "timestamp": "1776816554610",
+    "no_ask": 0.988
+  },
+  "kalshi::KXEPLTOP2-26-MUN": {
+    "yes_ask": 0.19,
+    "no_ask": 0.98,
+    "timestamp": "2026-04-22T00:20:28.741089Z"
+  },
+  "kalshi::KXMEASLES-26-10000": {
+    "yes_ask": 0.12,
+    "no_ask": 0.89,
+    "timestamp": "2026-04-22T00:18:32.50191Z"
+  },
+  "poly::Will the Los Angeles Kings win the 2026 NHL Stanley Cup?": {
+    "yes_ask": 0.009,
+    "timestamp": "1776816461460",
+    "no_ask": 0.995
+  },
+  "kalshi::KXAKSENATE-26NOV03-DSUL": {
+    "yes_ask": 0.4,
+    "no_ask": 0.62,
+    "timestamp": "2026-04-22T00:17:07.380262Z"
+  },
+  "poly::Will Manchester City win the 2025\u201326 English Premier League?": {
+    "yes_ask": 0.58,
+    "timestamp": "1776817390277",
+    "no_ask": 0.43
+  },
+  "kalshi::KXBOND-30-ATJ": {
+    "yes_ask": 0.17,
+    "no_ask": 0.84,
+    "timestamp": "2026-04-22T00:20:35.699371Z"
+  },
+  "kalshi::KXIPHONERELEASE-IPHONE18-26OCT01": {
+    "yes_ask": 0.26,
+    "no_ask": 0.76,
+    "timestamp": "2026-04-22T00:20:38.897672Z"
+  },
+  "kalshi::KXEPLRELEGATION-26-LEE": {
+    "yes_ask": 0.04,
+    "no_ask": 0.97,
+    "timestamp": "2026-04-22T00:15:46.133162Z"
+  },
+  "poly::Will France win the 2026 FIFA World Cup?": {
+    "yes_ask": 0.158,
+    "timestamp": "1776816992805",
+    "no_ask": 0.843
+  },
+  "kalshi::KXTRUMPREMOVE": {
+    "yes_ask": 0.28,
+    "no_ask": 0.73,
+    "timestamp": "2026-04-22T00:21:26.175958Z"
+  },
+  "kalshi::APPLEFOLD-26DEC31": {
+    "yes_ask": 0.86,
+    "no_ask": 0.17,
+    "timestamp": "2026-04-22T00:18:01.991256Z"
+  },
+  "kalshi::KXFEDDECISION-26JUN-C25": {
+    "yes_ask": 0.08,
+    "no_ask": 0.93,
+    "timestamp": "2026-04-22T00:22:23.890819Z"
+  },
+  "poly::Will Ed Miliband be the next Prime Minister of the United Kingdom in 2026?": {
+    "yes_ask": 0.123,
+    "timestamp": "1776816355523",
+    "no_ask": 0.896
+  },
+  "kalshi::KXNBA-26-DEN": {
+    "yes_ask": 0.07,
+    "no_ask": 0.94,
+    "timestamp": "2026-04-22T00:22:22.736547Z"
+  },
+  "kalshi::KXNEXTISRAELPM-45JAN01-NBEN": {
+    "yes_ask": 0.41,
+    "no_ask": 0.62,
+    "timestamp": "2026-04-22T00:20:04.909839Z"
+  },
+  "kalshi::KXSB-27-LAR": {
+    "yes_ask": 0.12,
+    "no_ask": 0.89,
+    "timestamp": "2026-04-22T00:21:24.842922Z"
+  },
+  "kalshi::KXSB-27-BUF": {
+    "yes_ask": 0.07,
+    "no_ask": 0.94,
+    "timestamp": "2026-04-22T00:15:23.943048Z"
+  },
+  "poly::US recession by end of 2026?": {
+    "yes_ask": 0.27,
+    "timestamp": "1776816375672",
+    "no_ask": 0.74
+  },
+  "kalshi::KXNBA-26-BOS": {
+    "yes_ask": 0.15,
+    "no_ask": 0.86,
+    "timestamp": "2026-04-22T00:23:00.516381Z"
+  },
+  "poly::Will Trump endorse John Cornyn for TX-Sen by Nov 2 2026 ET?": {
+    "yes_ask": 0.34,
+    "timestamp": "1776817185637",
+    "no_ask": 0.968
+  },
+  "poly::Will Brazil win the 2026 FIFA World Cup?": {
+    "yes_ask": 0.086,
+    "timestamp": "1776817213654",
+    "no_ask": 0.916
+  },
+  "poly::Will the Buffalo Sabres win the 2026 NHL Stanley Cup?": {
+    "yes_ask": 0.068,
+    "timestamp": "1776817372237",
+    "no_ask": 0.936
+  },
+  "poly::Will the Los Angeles Lakers win the 2026 NBA Finals?": {
     "yes_ask": 0.018,
-    "timestamp": "1774757649216",
+    "timestamp": "1776816837617",
     "no_ask": 0.983
   },
-  "poly::Will Elise Stefanik win the 2026 New York Governor Republican primary election?": {
-    "yes_ask": 0.035,
-    "timestamp": "1774757650023",
+  "poly::Will the San Antonio Spurs win the 2026 NBA Finals?": {
+    "yes_ask": 0.144,
+    "timestamp": "1776817365969",
+    "no_ask": 0.859
+  },
+  "poly::Will the Atlanta Hawks win the 2026 NBA Finals?": {
+    "yes_ask": 0.005,
+    "timestamp": "1776815124055",
+    "no_ask": 0.996
+  },
+  "poly::Will the Detroit Pistons win the 2026 NBA Finals?": {
+    "yes_ask": 0.029,
+    "timestamp": "1776817377848",
+    "no_ask": 0.973
+  },
+  "poly::Will the New York Knicks win the 2026 NBA Finals?": {
+    "yes_ask": 0.03,
+    "timestamp": "1776816198371",
+    "no_ask": 0.971
+  },
+  "poly::Will the Oklahoma City Thunder win the 2026 NBA Finals?": {
+    "yes_ask": 0.49,
+    "timestamp": "1776817306944",
+    "no_ask": 0.52
+  },
+  "poly::Will the Orlando Magic win the 2026 NBA Finals?": {
+    "yes_ask": 0.006,
+    "timestamp": "1776816218847",
+    "no_ask": 0.995
+  },
+  "poly::Will the Philadelphia 76ers win the 2026 NBA Finals?": {
+    "yes_ask": 0.003,
+    "timestamp": "1776817280529",
+    "no_ask": 0.998
+  },
+  "poly::Will the Portland Trail Blazers win the 2026 NBA Finals?": {
+    "yes_ask": 0.002,
+    "timestamp": "1776817365812",
+    "no_ask": 0.999
+  },
+  "poly::Will Ron DeSantis win the 2028 Republican presidential nomination?": {
+    "yes_ask": 0.026,
+    "timestamp": "1776816222940",
+    "no_ask": 0.975
+  },
+  "kalshi::KXIPL-26-RR": {
+    "yes_ask": 0.16,
+    "no_ask": 0.85,
+    "timestamp": "2026-04-22T00:21:30.991436Z"
+  },
+  "kalshi::KXNBA-26-LAL": {
+    "yes_ask": 0.03,
+    "no_ask": 0.98,
+    "timestamp": "2026-04-22T00:21:47.754669Z"
+  },
+  "poly::Will Argentina win the 2026 FIFA World Cup?": {
+    "yes_ask": 0.09,
+    "timestamp": "1776817377800",
+    "no_ask": 0.912
+  },
+  "kalshi::KXNBA-26-DET": {
+    "yes_ask": 0.04,
+    "no_ask": 0.97,
+    "timestamp": "2026-04-22T00:21:32.650033Z"
+  },
+  "kalshi::KXNBAEAST-26-BOS": {
+    "yes_ask": 0.47,
+    "no_ask": 0.54,
+    "timestamp": "2026-04-22T00:23:08.76577Z"
+  },
+  "poly::Will OpenAI have the best AI model at the end of April 2026?": {
+    "yes_ask": 0.19,
+    "timestamp": "1776817231387",
+    "no_ask": 0.816
+  },
+  "poly::Will Arsenal finish in the top 4 of the EPL 2025\u201326 standings?": {
+    "yes_ask": 1.0,
+    "timestamp": "1776816089846",
+    "no_ask": 0.002
+  },
+  "poly::Will Germany win the 2026 FIFA World Cup?": {
+    "yes_ask": 0.055,
+    "timestamp": "1776817313146",
+    "no_ask": 0.947
+  },
+  "kalshi::KXNHL-26-COL": {
+    "yes_ask": 0.26,
+    "no_ask": 0.75,
+    "timestamp": "2026-04-22T00:20:05.931017Z"
+  },
+  "poly::Will Isack Hadjar be the 2026 F1 Drivers' Champion?": {
+    "yes_ask": 0.006,
+    "timestamp": "1776817016982",
+    "no_ask": 0.995
+  },
+  "poly::Will the Denver Nuggets win the 2026 NBA Finals?": {
+    "yes_ask": 0.08,
+    "timestamp": "1776817352022",
+    "no_ask": 0.93
+  },
+  "kalshi::KXMENWORLDCUP-26-FR": {
+    "yes_ask": 0.176,
+    "no_ask": 0.834,
+    "timestamp": "2026-04-22T00:21:08.459521Z"
+  },
+  "poly::Will Jon Stewart win the 2028 Democratic presidential nomination?": {
+    "yes_ask": 0.023,
+    "timestamp": "1776816096155",
+    "no_ask": 0.978
+  },
+  "kalshi::KXRATECUT-26DEC31": {
+    "yes_ask": 0.685,
+    "no_ask": 0.321,
+    "timestamp": "2026-04-22T00:15:26.523026Z"
+  },
+  "poly::Will the Seattle Mariners win the 2026 World Series?": {
+    "yes_ask": 0.065,
+    "timestamp": "1776817094327",
+    "no_ask": 0.937
+  },
+  "poly::Will DeepSeek have the best AI model at the end of April 2026?": {
+    "yes_ask": 0.012,
+    "timestamp": "1776816577313",
+    "no_ask": 0.991
+  },
+  "kalshi::KXSURVIVOR-26DEC31-CIR": {
+    "yes_ask": 0.1,
+    "no_ask": 0.91,
+    "timestamp": "2026-04-22T00:13:03.259206Z"
+  },
+  "kalshi::KXNBA-26-NYK": {
+    "yes_ask": 0.04,
+    "no_ask": 0.97,
+    "timestamp": "2026-04-22T00:22:23.121404Z"
+  },
+  "kalshi::KXGOVGANOMR-26-BJ": {
+    "yes_ask": 0.27,
+    "no_ask": 0.76,
+    "timestamp": "2026-04-22T00:20:27.080603Z"
+  },
+  "poly::Will Naftali Bennett be the next Prime Minister of Israel?": {
+    "yes_ask": 0.31,
+    "timestamp": "1776817241741",
+    "no_ask": 0.7
+  },
+  "poly::Will Cirie Fields win Survivor Season 50?": {
+    "yes_ask": 0.138,
+    "timestamp": "1776817038134",
+    "no_ask": 0.921
+  },
+  "kalshi::KXPRESNOMD-28-MK": {
+    "yes_ask": 0.042,
+    "no_ask": 0.963,
+    "timestamp": "2026-04-22T00:12:19.269485Z"
+  },
+  "poly::Will Red Bull Racing be the 2026 F1 Constructors' Champion?": {
+    "yes_ask": 0.017,
+    "timestamp": "1776816115804",
+    "no_ask": 0.985
+  },
+  "kalshi::KXPRESNOMR-28-TMAS": {
+    "yes_ask": 0.015,
+    "no_ask": 0.986,
+    "timestamp": "2026-04-22T00:01:58.107042Z"
+  },
+  "poly::Will Trump be impeached before his term ends?": {
+    "yes_ask": 0.67,
+    "timestamp": "1776816728106",
+    "no_ask": 0.35
+  },
+  "poly::Callum Turner announced as next James Bond?": {
+    "yes_ask": 0.16,
+    "timestamp": "1776817379718",
+    "no_ask": 0.89
+  },
+  "poly::Will Roy Cooper win the 2028 Democratic presidential nomination?": {
+    "yes_ask": 0.012,
+    "timestamp": "1776816882846",
+    "no_ask": 0.989
+  },
+  "poly::Will Sarah Huckabee Sanders win the 2028 Republican presidential nomination?": {
+    "yes_ask": 0.008,
+    "timestamp": "1776816776694",
+    "no_ask": 0.993
+  },
+  "poly::Will Japan win the 2026 FIFA World Cup?": {
+    "yes_ask": 0.022,
+    "timestamp": "1776817340310",
+    "no_ask": 0.979
+  },
+  "kalshi::KXCOLOMBIAPRESR1-26MAY31-ICAS": {
+    "yes_ask": 0.88,
+    "no_ask": 0.15,
+    "timestamp": "2026-04-22T00:20:47.837639Z"
+  },
+  "poly::Will the Philadelphia Flyers win the 2026 NHL Stanley Cup?": {
+    "yes_ask": 0.037,
+    "timestamp": "1776817096334",
+    "no_ask": 0.968
+  },
+  "poly::Will Luiz In\u00e1cio Lula da Silva qualify for Brazil's presidential runoff?": {
+    "yes_ask": 0.8,
+    "timestamp": "1776817345522",
+    "no_ask": 0.23
+  },
+  "poly::Will Zohran Mamdani win the 2028 Democratic presidential nomination?": {
+    "yes_ask": 0.008,
+    "timestamp": "1776816127487",
+    "no_ask": 0.993
+  },
+  "poly::Will the Detroit Lions win the 2027 NFL league championship?": {
+    "yes_ask": 0.037,
+    "timestamp": "1776816136390",
+    "no_ask": 0.964
+  },
+  "kalshi::KXMLBNL-26-MIA": {
+    "yes_ask": 0.01,
+    "no_ask": 1.0,
+    "timestamp": "2026-04-22T00:02:23.445597Z"
+  },
+  "kalshi::KXMLBNL-26-PHI": {
+    "yes_ask": 0.07,
+    "no_ask": 0.94,
+    "timestamp": "2026-04-22T00:11:14.19672Z"
+  },
+  "kalshi::KXMLBNL-26-ATL": {
+    "yes_ask": 0.12,
+    "no_ask": 0.89,
+    "timestamp": "2026-04-22T00:02:23.416977Z"
+  },
+  "kalshi::KXMLBNL-26-CIN": {
+    "yes_ask": 0.03,
+    "no_ask": 0.98,
+    "timestamp": "2026-04-22T00:11:14.204881Z"
+  },
+  "poly::Will Haiti win the 2026 FIFA World Cup?": {
+    "yes_ask": 0.002,
+    "timestamp": "1776817314266",
+    "no_ask": 0.999
+  },
+  "poly::Will Hillary Clinton win the 2028 Democratic presidential nomination?": {
+    "yes_ask": 0.008,
+    "timestamp": "1776816146320",
+    "no_ask": 0.993
+  },
+  "kalshi::KXSAVEACT-27-JAN04": {
+    "yes_ask": 0.12,
+    "no_ask": 0.89,
+    "timestamp": "2026-04-22T00:20:26.257271Z"
+  },
+  "poly::Will the Dallas Cowboys win the 2027 NFL league championship?": {
+    "yes_ask": 0.024,
+    "timestamp": "1776816630418",
+    "no_ask": 0.977
+  },
+  "poly::Will Croatia win the 2026 FIFA World Cup?": {
+    "yes_ask": 0.009,
+    "timestamp": "1776816371074",
     "no_ask": 0.992
+  },
+  "poly::Will Thomas Massie win the 2028 Republican presidential nomination?": {
+    "yes_ask": 0.017,
+    "timestamp": "1776816376569",
+    "no_ask": 0.984
+  },
+  "poly::Will Alpine be the 2026 F1 Constructors' Champion?": {
+    "yes_ask": 0.006,
+    "timestamp": "1776816533455",
+    "no_ask": 0.995
+  },
+  "poly::Will Josh Hawley win the 2028 Republican presidential nomination?": {
+    "yes_ask": 0.009,
+    "timestamp": "1776816159362",
+    "no_ask": 0.992
+  },
+  "poly::Will the Fed increase interest rates by 25+ bps after the April 2026 meeting?": {
+    "yes_ask": 0.003,
+    "timestamp": "1776816803528",
+    "no_ask": 0.998
+  },
+  "poly::Will Portugal win the 2026 FIFA World Cup?": {
+    "yes_ask": 0.081,
+    "timestamp": "1776816905605",
+    "no_ask": 0.921
+  },
+  "kalshi::KXNBA-26-MIN": {
+    "yes_ask": 0.02,
+    "no_ask": 0.99,
+    "timestamp": "2026-04-22T00:18:59.398929Z"
+  },
+  "poly::Will Uruguay win the 2026 FIFA World Cup?": {
+    "yes_ask": 0.01,
+    "timestamp": "1776816171299",
+    "no_ask": 0.991
+  },
+  "poly::Will Paraguay win the 2026 FIFA World Cup?": {
+    "yes_ask": 0.005,
+    "timestamp": "1776816502456",
+    "no_ask": 0.996
+  },
+  "poly::Will the Baltimore Ravens win the 2027 NFL league championship?": {
+    "yes_ask": 0.053,
+    "timestamp": "1776816945805",
+    "no_ask": 0.948
+  },
+  "poly::Will Rahm Emanuel win the 2028 Democratic presidential nomination?": {
+    "yes_ask": 0.014,
+    "timestamp": "1776816348119",
+    "no_ask": 0.987
+  },
+  "poly::Will Charles Leclerc be the 2026 F1 Drivers' Champion?": {
+    "yes_ask": 0.073,
+    "timestamp": "1776816631386",
+    "no_ask": 0.931
+  },
+  "poly::Will Real Madrid win the 2025\u201326 La Liga?": {
+    "yes_ask": 0.043,
+    "timestamp": "1776816501110",
+    "no_ask": 0.965
+  },
+  "kalshi::KXSURVIVOR-26DEC31-STE": {
+    "yes_ask": 0.01,
+    "no_ask": 1.0,
+    "timestamp": "2026-04-22T00:03:04.906353Z"
+  },
+  "poly::Will Zelenskyy and Putin meet next in Kazakhstan before 2027?": {
+    "yes_ask": 0.011,
+    "timestamp": "1776817212932",
+    "no_ask": 0.995
+  },
+  "kalshi::KXNHL-26-CAR": {
+    "yes_ask": 0.19,
+    "no_ask": 0.82,
+    "timestamp": "2026-04-22T00:19:04.870811Z"
+  },
+  "kalshi::KXPRESNOMD-28-GN": {
+    "yes_ask": 0.25,
+    "no_ask": 0.76,
+    "timestamp": "2026-04-22T00:20:29.336294Z"
+  },
+  "poly::Will the Republican Party control the House after the 2026 Midterm elections?": {
+    "yes_ask": 0.16,
+    "timestamp": "1776816198192",
+    "no_ask": 0.85
+  },
+  "kalshi::KXMENWORLDCUP-26-US": {
+    "yes_ask": 0.02,
+    "no_ask": 0.986,
+    "timestamp": "2026-04-22T00:03:19.264922Z"
+  },
+  "poly::Will the Philadelphia Eagles win the 2027 NFL league championship?": {
+    "yes_ask": 0.038,
+    "timestamp": "1776816694744",
+    "no_ask": 0.963
+  },
+  "poly::Will Mark Cuban win the 2028 Democratic presidential nomination?": {
+    "yes_ask": 0.011,
+    "timestamp": "1776816667008",
+    "no_ask": 0.99
+  },
+  "poly::Will the Tampa Bay Lightning win the 2026 NHL Stanley Cup?": {
+    "yes_ask": 0.098,
+    "timestamp": "1776817327220",
+    "no_ask": 0.905
+  },
+  "kalshi::CONTROLH-2026-R": {
+    "yes_ask": 0.15,
+    "no_ask": 0.86,
+    "timestamp": "2026-04-22T00:17:14.025366Z"
+  },
+  "poly::Will the Milwaukee Brewers win the 2026 World Series?": {
+    "yes_ask": 0.028,
+    "timestamp": "1776816943368",
+    "no_ask": 0.973
+  },
+  "kalshi::KXSURVIVOR-26DEC31-OZZ": {
+    "yes_ask": 0.02,
+    "no_ask": 0.99,
+    "timestamp": "2026-04-22T00:13:48.097024Z"
+  },
+  "kalshi::KXBUNDESLIGATOP4-26-LEV": {
+    "yes_ask": 0.37,
+    "no_ask": 0.97,
+    "timestamp": "2026-04-22T00:19:38.045845Z"
+  },
+  "poly::Will xAI have the best AI model at the end of April 2026?": {
+    "yes_ask": 0.002,
+    "timestamp": "1776816577135",
+    "no_ask": 0.999
+  },
+  "kalshi::KXMEASLES-26-4000": {
+    "yes_ask": 0.4,
+    "no_ask": 0.61,
+    "timestamp": "2026-04-22T00:23:06.172971Z"
+  },
+  "poly::Will the Fed decrease interest rates by 25 bps after the July 2026 meeting?": {
+    "yes_ask": 0.13,
+    "timestamp": "1776816640467",
+    "no_ask": 0.88
+  },
+  "poly::Will the Fed increase interest rates by 25 bps after the June 2026 meeting?": {
+    "yes_ask": 0.019,
+    "timestamp": "1776816230530",
+    "no_ask": 0.983
+  },
+  "poly::Will there be at least 2000 measles cases in the U.S. in 2026?": {
+    "yes_ask": 0.984,
+    "timestamp": "1776817101484",
+    "no_ask": 0.032
+  },
+  "kalshi::KXMENWORLDCUP-26-BR": {
+    "yes_ask": 0.094,
+    "no_ask": 0.909,
+    "timestamp": "2026-04-22T00:20:14.122083Z"
+  },
+  "poly::Will the Democratic Party control the House after the 2026 Midterm elections?": {
+    "yes_ask": 0.85,
+    "timestamp": "1776816236526",
+    "no_ask": 0.16
+  },
+  "kalshi::KXPERUPRES-26-ACHA": {
+    "yes_ask": 0.002,
+    "no_ask": 0.999,
+    "timestamp": "2026-04-22T00:12:56.506169Z"
+  },
+  "poly::Will OpenAI have the best AI model at the end of June 2026?": {
+    "yes_ask": 0.13,
+    "timestamp": "1776817269573",
+    "no_ask": 0.89
+  },
+  "poly::Will xAI have the best AI model at the end of June 2026?": {
+    "yes_ask": 0.019,
+    "timestamp": "1776816241441",
+    "no_ask": 0.988
+  },
+  "poly::Will Pete Buttigieg win the 2028 Democratic presidential nomination?": {
+    "yes_ask": 0.041,
+    "timestamp": "1776817365834",
+    "no_ask": 0.96
+  },
+  "poly::Will the Jacksonville Jaguars win the 2027 NFL league championship?": {
+    "yes_ask": 0.029,
+    "timestamp": "1776816935081",
+    "no_ask": 0.972
+  },
+  "poly::Will Michelle Bolsonaro win the 2026 Brazilian presidential election?": {
+    "yes_ask": 0.006,
+    "timestamp": "1776816965496",
+    "no_ask": 0.995
+  },
+  "kalshi::KXPRESNOMR-28-RDS": {
+    "yes_ask": 0.042,
+    "no_ask": 0.959,
+    "timestamp": "2026-04-22T00:21:10.917717Z"
+  },
+  "kalshi::KXABRAHAMSA-27-JAN01": {
+    "yes_ask": 0.24,
+    "no_ask": 0.77,
+    "timestamp": "2026-04-22T00:04:15.919537Z"
+  },
+  "poly::Will the Los Angeles Angels win the 2026 World Series?": {
+    "yes_ask": 0.007,
+    "timestamp": "1776816258500",
+    "no_ask": 0.994
+  },
+  "poly::Will Aston Martin be the 2026 F1 Constructors' Champion?": {
+    "yes_ask": 0.007,
+    "timestamp": "1776816265788",
+    "no_ask": 0.994
+  },
+  "poly::Will Fernando Haddad win the 2026 Brazilian presidential election?": {
+    "yes_ask": 0.037,
+    "timestamp": "1776816656949",
+    "no_ask": 0.964
+  },
+  "kalshi::KXSURVIVOR-26DEC31-DEE": {
+    "yes_ask": 0.01,
+    "no_ask": 1.0,
+    "timestamp": "2026-04-22T00:04:36.238807Z"
+  },
+  "poly::Will the Minnesota Wild win the 2026 NHL Stanley Cup?": {
+    "yes_ask": 0.055,
+    "timestamp": "1776817250777",
+    "no_ask": 0.946
+  },
+  "poly::Will the next Prime Minister of Hungary be Viktor Orb\u00e1n?": {
+    "yes_ask": 0.007,
+    "timestamp": "1776816670520",
+    "no_ask": 0.994
+  },
+  "poly::Will Elise Stefanik win the 2028 Republican presidential nomination?": {
+    "yes_ask": 0.007,
+    "timestamp": "1776816280755",
+    "no_ask": 0.994
+  },
+  "poly::Will Ana Paula Renault win Big Brother Brasil 26?": {
+    "yes_ask": 0.993,
+    "timestamp": "1776816300802",
+    "no_ask": 0.01
+  },
+  "kalshi::KXNEXTHUNGARYPM-26MAY01-VORB": {
+    "yes_ask": 0.005,
+    "no_ask": 0.998,
+    "timestamp": "2026-04-22T00:20:06.164293Z"
+  },
+  "poly::Will Arsenal finish in 2nd place in the 2025-26 English Premier League?": {
+    "yes_ask": 0.57,
+    "timestamp": "1776816297328",
+    "no_ask": 0.44
+  },
+  "poly::Will the Boston Bruins win the 2026 NHL Stanley Cup?": {
+    "yes_ask": 0.011,
+    "timestamp": "1776816461461",
+    "no_ask": 0.992
+  },
+  "poly::Will Romeu Zema finish in second place in the first round of the 2026 Brazilian presidential election?": {
+    "yes_ask": 0.04,
+    "timestamp": "1776817352725",
+    "no_ask": 0.98
+  },
+  "poly::Will Andy Beshear win the 2028 Democratic presidential nomination?": {
+    "yes_ask": 0.024,
+    "timestamp": "1776817307239",
+    "no_ask": 0.977
+  },
+  "poly::Will S\u00e9gol\u00e8ne Royal win the 2027 French presidential election?": {
+    "yes_ask": 0.008,
+    "timestamp": "1776816668681",
+    "no_ask": 0.993
+  },
+  "poly::Will Tim Walz win the 2028 Democratic presidential nomination?": {
+    "yes_ask": 0.008,
+    "timestamp": "1776816651259",
+    "no_ask": 0.993
+  },
+  "poly::Will the next Prime Minister of Hungary be P\u00e9ter Magyar?": {
+    "yes_ask": 0.985,
+    "timestamp": "1776817287357",
+    "no_ask": 0.017
+  },
+  "poly::Will Luiz In\u00e1cio Lula da Silva win the 2026 Brazilian presidential election?": {
+    "yes_ask": 0.39,
+    "timestamp": "1776816965459",
+    "no_ask": 0.62
+  },
+  "kalshi::KXTOPAI-27-JAN01-DEPP": {
+    "yes_ask": 0.12,
+    "no_ask": 0.93,
+    "timestamp": "2026-04-22T00:10:44.581174Z"
+  },
+  "poly::Will the Houston Rockets win the 2026 NBA Finals?": {
+    "yes_ask": 0.008,
+    "timestamp": "1776817253151",
+    "no_ask": 0.993
+  },
+  "kalshi::KXSB-27-WAS": {
+    "yes_ask": 0.03,
+    "no_ask": 0.98,
+    "timestamp": "2026-04-22T00:13:04.820547Z"
+  },
+  "poly::Will Graham Platner be the Democratic nominee for Senate in Maine?": {
+    "yes_ask": 0.92,
+    "timestamp": "1776816673858",
+    "no_ask": 0.09
+  },
+  "kalshi::KXSENATEMED-26-GRA": {
+    "yes_ask": 0.88,
+    "no_ask": 0.13,
+    "timestamp": "2026-04-22T00:18:44.959129Z"
+  },
+  "poly::Will the upper bound of the target federal funds rate be 2.5% at the end of 2026?": {
+    "yes_ask": 0.024,
+    "timestamp": "1776816943742",
+    "no_ask": 0.992
+  },
+  "kalshi::KXTX33D-26-JJOH": {
+    "yes_ask": 0.3,
+    "no_ask": 0.74,
+    "timestamp": "2026-04-22T00:20:16.874602Z"
+  },
+  "poly::Will Mike Lindell win the 2026 Minnesota Governor Republican primary election?": {
+    "yes_ask": 0.14,
+    "timestamp": "1776816424674",
+    "no_ask": 0.89
+  },
+  "poly::Will Paul Dans be the Republican nominee for Senate in South Carolina?": {
+    "yes_ask": 0.022,
+    "timestamp": "1776817078326",
+    "no_ask": 0.987
+  },
+  "poly::Will Trump recognize Somaliland before 2027?": {
+    "yes_ask": 0.177,
+    "timestamp": "1776816366158",
+    "no_ask": 0.849
+  },
+  "poly::Will Bruno Mars be the top Spotify artist for 2026?": {
+    "yes_ask": 0.041,
+    "timestamp": "1776816523414",
+    "no_ask": 0.982
+  },
+  "kalshi::KXTOPARTISTUSA-26-BRUN": {
+    "yes_ask": 0.07,
+    "no_ask": 1.0,
+    "timestamp": "2026-04-22T00:17:02.36437Z"
+  },
+  "poly::Will Elon Musk win his case against Sam Altman?": {
+    "yes_ask": 0.35,
+    "timestamp": "1776816357134",
+    "no_ask": 0.67
+  },
+  "kalshi::KXPRESNOMD-28-PB": {
+    "yes_ask": 0.056,
+    "no_ask": 0.945,
+    "timestamp": "2026-04-22T00:20:13.266046Z"
+  },
+  "kalshi::KXBRPRES-26-FH": {
+    "yes_ask": 0.03,
+    "no_ask": 0.975,
+    "timestamp": "2026-04-22T00:10:31.018448Z"
+  },
+  "poly::Will Trump visit China by April 30?": {
+    "yes_ask": 0.009,
+    "timestamp": "1776816660505",
+    "no_ask": 0.992
+  },
+  "poly::Will the Fed increase interest rates by 50+ bps after the June 2026 meeting?": {
+    "yes_ask": 0.006,
+    "timestamp": "1776816695588",
+    "no_ask": 0.995
+  },
+  "kalshi::KXHOUSERACE-CA52-26-D": {
+    "yes_ask": 0.98,
+    "no_ask": 0.039,
+    "timestamp": "2026-04-22T00:07:36.959174Z"
+  },
+  "poly::Will South Korea win the 2026 FIFA World Cup?": {
+    "yes_ask": 0.004,
+    "timestamp": "1776816382698",
+    "no_ask": 0.997
+  },
+  "poly::Will Carlos Sainz Jr. be the 2026 F1 Drivers' Champion?": {
+    "yes_ask": 0.006,
+    "timestamp": "1776816383227",
+    "no_ask": 0.995
+  },
+  "poly::Will Phil Murphy win the 2028 Democratic presidential nomination?": {
+    "yes_ask": 0.007,
+    "timestamp": "1776816386192",
+    "no_ask": 0.994
+  },
+  "kalshi::KXF1CONSTRUCTORS-26-RED": {
+    "yes_ask": 0.02,
+    "no_ask": 0.99,
+    "timestamp": "2026-04-22T00:15:14.006553Z"
+  },
+  "poly::Will Eric Swalwell win the California Governor Election in 2026?": {
+    "yes_ask": 0.002,
+    "timestamp": "1776816390265",
+    "no_ask": 0.999
+  },
+  "poly::Will the Democrats win the Nebraska Senate race in 2026?": {
+    "yes_ask": 0.046,
+    "timestamp": "1776816397702",
+    "no_ask": 0.958
+  },
+  "kalshi::KXUEL-26-AVL": {
+    "yes_ask": 0.51,
+    "no_ask": 0.5,
+    "timestamp": "2026-04-22T00:14:01.105088Z"
+  },
+  "kalshi::KXGTEMP-26-P0": {
+    "yes_ask": 0.31,
+    "no_ask": 0.714,
+    "timestamp": "2026-04-22T00:23:00.507026Z"
+  },
+  "kalshi::KXMLBAL-26-HOU": {
+    "yes_ask": 0.05,
+    "no_ask": 0.96,
+    "timestamp": "2026-04-22T00:22:14.788765Z"
+  },
+  "kalshi::KXNBA-26-TOR": {
+    "yes_ask": 0.01,
+    "no_ask": 1.0,
+    "timestamp": "2026-04-22T00:06:43.252011Z"
+  },
+  "kalshi::KXNBA-26-POR": {
+    "yes_ask": 0.01,
+    "no_ask": 1.0,
+    "timestamp": "2026-04-22T00:06:43.256354Z"
+  },
+  "poly::Will Frances Tiafoe win the 2026 Men's French Open?": {
+    "yes_ask": 0.003,
+    "timestamp": "1776817018615",
+    "no_ask": 0.998
+  },
+  "kalshi::KXMENWORLDCUP-26-ES": {
+    "yes_ask": 0.172,
+    "no_ask": 0.83,
+    "timestamp": "2026-04-22T00:06:52.24625Z"
+  },
+  "poly::Will Ted Cruz win the 2028 Republican presidential nomination?": {
+    "yes_ask": 0.012,
+    "timestamp": "1776816415177",
+    "no_ask": 0.989
+  },
+  "poly::Will Fl\u00e1vio Bolsonaro win the 2026 Brazilian presidential election?": {
+    "yes_ask": 0.406,
+    "timestamp": "1776816709353",
+    "no_ask": 0.597
+  },
+  "poly::Will Jair Bolsonaro win the 2026 Brazilian presidential election?": {
+    "yes_ask": 0.007,
+    "timestamp": "1776816965348",
+    "no_ask": 0.994
+  },
+  "poly::Will Eduardo Bolsonaro win the 2026 Brazilian presidential election?": {
+    "yes_ask": 0.004,
+    "timestamp": "1776816965442",
+    "no_ask": 0.997
+  },
+  "kalshi::KXMEASLES-26-8000": {
+    "yes_ask": 0.17,
+    "no_ask": 0.86,
+    "timestamp": "2026-04-22T00:22:59.429333Z"
+  },
+  "kalshi::KXBOND-30-JACO": {
+    "yes_ask": 0.22,
+    "no_ask": 0.79,
+    "timestamp": "2026-04-22T00:16:13.761643Z"
+  },
+  "poly::Will the Tampa Bay Buccaneers win the 2027 NFL league championship?": {
+    "yes_ask": 0.017,
+    "timestamp": "1776816505890",
+    "no_ask": 0.984
+  },
+  "kalshi::KXSATOSHIBTCYEAR-27": {
+    "yes_ask": 0.08,
+    "no_ask": 0.93,
+    "timestamp": "2026-04-22T00:12:10.415205Z"
+  },
+  "poly::Will Tottenham be relegated from the English Premier League after the 2025\u201326 season?": {
+    "yes_ask": 0.513,
+    "timestamp": "1776817335601",
+    "no_ask": 0.505
+  },
+  "poly::Will Reza Pahlavi enter Iran by April 30?": {
+    "yes_ask": 0.002,
+    "timestamp": "1776816660576",
+    "no_ask": 0.999
+  },
+  "kalshi::KXSERIEA-26-ACM": {
+    "yes_ask": 0.01,
+    "no_ask": 1.0,
+    "timestamp": "2026-04-22T00:22:53.872593Z"
+  },
+  "kalshi::KXSURVIVOR-26DEC31-JOE": {
+    "yes_ask": 0.04,
+    "no_ask": 0.97,
+    "timestamp": "2026-04-22T00:14:12.939624Z"
+  },
+  "kalshi::KXTOPARTISTUSA-26-BAD": {
+    "yes_ask": 0.18,
+    "no_ask": 0.87,
+    "timestamp": "2026-04-22T00:09:52.037424Z"
+  },
+  "kalshi::KXPREMIERLEAGUE-26-LFC": {
+    "yes_ask": 0.01,
+    "no_ask": 1.0,
+    "timestamp": "2026-04-22T00:11:24.196329Z"
+  },
+  "kalshi::KXLEADERSOUT-27JAN01-VZELUKR": {
+    "yes_ask": 0.17,
+    "no_ask": 0.84,
+    "timestamp": "2026-04-22T00:11:05.91752Z"
+  },
+  "kalshi::KXMLB-26-ATH": {
+    "yes_ask": 0.013,
+    "no_ask": 0.99,
+    "timestamp": "2026-04-22T00:10:02.380958Z"
+  },
+  "poly::Will Ro Khanna win the 2028 Democratic presidential nomination?": {
+    "yes_ask": 0.019,
+    "timestamp": "1776816454353",
+    "no_ask": 0.982
+  },
+  "poly::Will Josh Shapiro win the 2028 US Presidential Election?": {
+    "yes_ask": 0.021,
+    "timestamp": "1776816455896",
+    "no_ask": 0.98
+  },
+  "poly::Will the Ottawa Senators win the 2026 NHL Stanley Cup?": {
+    "yes_ask": 0.019,
+    "timestamp": "1776816541390",
+    "no_ask": 0.983
+  },
+  "poly::Will the Utah Mammoth win the 2026 NHL Stanley Cup?": {
+    "yes_ask": 0.012,
+    "timestamp": "1776816647356",
+    "no_ask": 0.99
+  },
+  "poly::Will the Pittsburgh Penguins win the 2026 NHL Stanley Cup?": {
+    "yes_ask": 0.013,
+    "timestamp": "1776816461459",
+    "no_ask": 0.988
+  },
+  "poly::Will the Vegas Golden Knights win the 2026 NHL Stanley Cup?": {
+    "yes_ask": 0.083,
+    "timestamp": "1776817097266",
+    "no_ask": 0.919
+  },
+  "poly::Will the Anaheim Ducks win the 2026 NHL Stanley Cup?": {
+    "yes_ask": 0.011,
+    "timestamp": "1776816461459",
+    "no_ask": 0.99
+  },
+  "poly::Will the Carolina Hurricanes win the 2026 NHL Stanley Cup?": {
+    "yes_ask": 0.18,
+    "timestamp": "1776817045980",
+    "no_ask": 0.83
+  },
+  "poly::Will the Edmonton Oilers win the 2026 NHL Stanley Cup?": {
+    "yes_ask": 0.09,
+    "timestamp": "1776817058839",
+    "no_ask": 0.92
+  },
+  "poly::Will the Colorado Avalanche win the 2026 NHL Stanley Cup?": {
+    "yes_ask": 0.253,
+    "timestamp": "1776817083730",
+    "no_ask": 0.748
+  },
+  "poly::Will the Philadelphia Phillies win the 2026 World Series?": {
+    "yes_ask": 0.032,
+    "timestamp": "1776816464735",
+    "no_ask": 0.969
+  },
+  "kalshi::KXVISITIRAN-26JUL01-PHEG": {
+    "yes_ask": 0.05,
+    "no_ask": 0.957,
+    "timestamp": "2026-04-22T00:18:56.660677Z"
+  },
+  "poly::Will the San Diego Padres win the 2026 World Series?": {
+    "yes_ask": 0.025,
+    "timestamp": "1776816469271",
+    "no_ask": 0.976
+  },
+  "poly::Will Max Verstappen be the 2026 F1 Drivers' Champion?": {
+    "yes_ask": 0.029,
+    "timestamp": "1776816510882",
+    "no_ask": 0.973
+  },
+  "poly::Will Belgium win the 2026 FIFA World Cup?": {
+    "yes_ask": 0.022,
+    "timestamp": "1776816857783",
+    "no_ask": 0.979
+  },
+  "kalshi::KXNBA-26-PHX": {
+    "yes_ask": 0.01,
+    "no_ask": 1.0,
+    "timestamp": "2026-04-22T00:14:28.66983Z"
+  },
+  "poly::Will Dinorah Figuera be the leader of Venezuela end of 2026?": {
+    "yes_ask": 0.008,
+    "timestamp": "1776817124425",
+    "no_ask": 0.994
+  },
+  "poly::Will the Atlanta Falcons win the 2027 NFL league championship?": {
+    "yes_ask": 0.01,
+    "timestamp": "1776816496430",
+    "no_ask": 0.991
+  },
+  "poly::Will Switzerland win the 2026 FIFA World Cup?": {
+    "yes_ask": 0.01,
+    "timestamp": "1776816659981",
+    "no_ask": 0.991
+  },
+  "kalshi::KXNHL-26-UTA": {
+    "yes_ask": 0.02,
+    "no_ask": 0.99,
+    "timestamp": "2026-04-22T00:19:04.870471Z"
+  },
+  "poly::Will Pete Buttigieg win the 2028 US Presidential Election?": {
+    "yes_ask": 0.02,
+    "timestamp": "1776816507473",
+    "no_ask": 0.982
+  },
+  "kalshi::KXSURVIVOR-26DEC31-RIZ": {
+    "yes_ask": 0.05,
+    "no_ask": 0.96,
+    "timestamp": "2026-04-22T00:11:27.074155Z"
+  },
+  "kalshi::KXNHL-26-OTT": {
+    "yes_ask": 0.02,
+    "no_ask": 0.99,
+    "timestamp": "2026-04-22T00:19:04.871273Z"
+  },
+  "kalshi::KXNHL-26-LA": {
+    "yes_ask": 0.01,
+    "no_ask": 1.0,
+    "timestamp": "2026-04-22T00:20:03.433139Z"
+  },
+  "kalshi::KXNBAEAST-26-PHI": {
+    "yes_ask": 0.01,
+    "no_ask": 1.0,
+    "timestamp": "2026-04-22T00:08:38.497709Z"
+  },
+  "kalshi::KXPRESPARTY-2028-R": {
+    "yes_ask": 0.38,
+    "no_ask": 0.63,
+    "timestamp": "2026-04-22T00:10:52.485539Z"
+  },
+  "kalshi::KXZELENSKYPUTIN-29-27": {
+    "yes_ask": 0.26,
+    "no_ask": 0.76,
+    "timestamp": "2026-04-22T00:14:28.226356Z"
+  },
+  "kalshi::KXNEXTUKPM-30-EMIL": {
+    "yes_ask": 0.13,
+    "no_ask": 0.9,
+    "timestamp": "2026-04-22T00:17:43.066544Z"
+  },
+  "kalshi::KXFOMEN-26-ALC": {
+    "yes_ask": 0.18,
+    "no_ask": 0.83,
+    "timestamp": "2026-04-22T00:09:05.251318Z"
+  },
+  "kalshi::KXNBAEAST-26-CLE": {
+    "yes_ask": 0.25,
+    "no_ask": 0.76,
+    "timestamp": "2026-04-22T00:19:16.818354Z"
+  },
+  "kalshi::KXSENATESCR-26-PDANS": {
+    "yes_ask": 0.02,
+    "no_ask": 1.0,
+    "timestamp": "2026-04-22T00:16:11.750807Z"
+  },
+  "kalshi::KXAOCSENATE-28": {
+    "yes_ask": 0.57,
+    "no_ask": 0.48,
+    "timestamp": "2026-04-22T00:09:17.81407Z"
+  },
+  "poly::Will Jon Ossoff win the 2028 US Presidential Election?": {
+    "yes_ask": 0.041,
+    "timestamp": "1776816571713",
+    "no_ask": 0.96
+  },
+  "poly::Will Drake officially release Iceman by April 30, 2026?": {
+    "yes_ask": 0.019,
+    "timestamp": "1776817156911",
+    "no_ask": 0.985
+  },
+  "poly::Will Mark Kelly win the 2028 Democratic presidential nomination?": {
+    "yes_ask": 0.028,
+    "timestamp": "1776816583197",
+    "no_ask": 0.973
+  },
+  "poly::Will Wes Moore win the 2028 Democratic presidential nomination?": {
+    "yes_ask": 0.013,
+    "timestamp": "1776816586942",
+    "no_ask": 0.988
+  },
+  "poly::Will the Green Bay Packers win the 2027 NFL league championship?": {
+    "yes_ask": 0.035,
+    "timestamp": "1776816589105",
+    "no_ask": 0.966
+  },
+  "poly::Will Jon Bonck be the Republican Nominee for TX-38?": {
+    "yes_ask": 0.922,
+    "timestamp": "1776816602826",
+    "no_ask": 0.083
+  },
+  "kalshi::KXGREENTERRITORY-29": {
+    "yes_ask": 0.37,
+    "no_ask": 0.64,
+    "timestamp": "2026-04-22T00:10:21.67374Z"
+  },
+  "poly::Will the Democratic Party win the VA-06 House seat?": {
+    "yes_ask": 0.86,
+    "timestamp": "1776816600520",
+    "no_ask": 0.16
+  },
+  "kalshi::KXTXRUNOFFENDORSE-26MAY26-DJT-KPAX": {
+    "yes_ask": 0.36,
+    "no_ask": 0.67,
+    "timestamp": "2026-04-22T00:15:37.288111Z"
+  },
+  "poly::Will 2026 be the hottest year on record?": {
+    "yes_ask": 0.38,
+    "timestamp": "1776816606626",
+    "no_ask": 0.63
+  },
+  "poly::Pedro S\u00e1nchez out as PM of Spain by December 31, 2026?": {
+    "yes_ask": 0.21,
+    "timestamp": "1776816609514",
+    "no_ask": 0.83
+  },
+  "kalshi::KXSB-27-MIN": {
+    "yes_ask": 0.02,
+    "no_ask": 0.99,
+    "timestamp": "2026-04-22T00:17:51.404546Z"
+  },
+  "poly::Will Gretchen Whitmer win the 2028 Democratic presidential nomination?": {
+    "yes_ask": 0.013,
+    "timestamp": "1776816622305",
+    "no_ask": 0.988
+  },
+  "kalshi::KXPRESNOMR-28-MTG": {
+    "yes_ask": 0.012,
+    "no_ask": 0.991,
+    "timestamp": "2026-04-22T00:10:26.736085Z"
+  },
+  "poly::Will Burt Jones win the 2026 Georgia Governor Republican primary election?": {
+    "yes_ask": 0.26,
+    "timestamp": "1776816825987",
+    "no_ask": 0.77
+  },
+  "poly::Will there be at least 4000 measles cases in the U.S. in 2026?": {
+    "yes_ask": 0.33,
+    "timestamp": "1776817009789",
+    "no_ask": 0.72
+  },
+  "poly::Will the Carolina Panthers win the 2027 NFL league championship?": {
+    "yes_ask": 0.015,
+    "timestamp": "1776816652526",
+    "no_ask": 0.986
+  },
+  "kalshi::KXPRESPARTY-2028-D": {
+    "yes_ask": 0.63,
+    "no_ask": 0.39,
+    "timestamp": "2026-04-22T00:10:53.943857Z"
+  },
+  "kalshi::KXSENATELAR-26-JLET": {
+    "yes_ask": 0.68,
+    "no_ask": 0.38,
+    "timestamp": "2026-04-22T00:22:23.960579Z"
+  },
+  "kalshi::KXBRPRES-26-FBOL": {
+    "yes_ask": 0.42,
+    "no_ask": 0.59,
+    "timestamp": "2026-04-22T00:22:47.296276Z"
+  },
+  "kalshi::KXRETIREMM-26": {
+    "yes_ask": 0.2,
+    "no_ask": 0.81,
+    "timestamp": "2026-04-22T00:11:05.572678Z"
+  },
+  "kalshi::KXLEADERSOUT-27JAN01-PSANPM": {
+    "yes_ask": 0.29,
+    "no_ask": 0.74,
+    "timestamp": "2026-04-22T00:17:20.095843Z"
+  },
+  "kalshi::KXBRPRES-26-RCAI": {
+    "yes_ask": 0.02,
+    "no_ask": 0.987,
+    "timestamp": "2026-04-22T00:13:35.834717Z"
+  },
+  "kalshi::KXSB-27-ATL": {
+    "yes_ask": 0.02,
+    "no_ask": 0.99,
+    "timestamp": "2026-04-22T00:11:42.819522Z"
+  },
+  "kalshi::KXNBA-26-HOU": {
+    "yes_ask": 0.01,
+    "no_ask": 1.0,
+    "timestamp": "2026-04-22T00:13:33.797483Z"
+  },
+  "kalshi::KXMLSCUP-26-SD": {
+    "yes_ask": 0.05,
+    "no_ask": 0.96,
+    "timestamp": "2026-04-22T00:11:39.167367Z"
+  },
+  "kalshi::SENATENE-26-R": {
+    "yes_ask": 0.67,
+    "no_ask": 0.34,
+    "timestamp": "2026-04-22T00:12:02.221634Z"
+  },
+  "kalshi::KXSERIEA-26-NAP": {
+    "yes_ask": 0.01,
+    "no_ask": 1.0,
+    "timestamp": "2026-04-22T00:12:55.606585Z"
+  },
+  "kalshi::KXNEXTUKPM-30-NF": {
+    "yes_ask": 0.11,
+    "no_ask": 0.9,
+    "timestamp": "2026-04-22T00:12:04.529676Z"
+  },
+  "kalshi::KXMLBAL-26-LAA": {
+    "yes_ask": 0.02,
+    "no_ask": 0.99,
+    "timestamp": "2026-04-22T00:11:22.211372Z"
+  },
+  "kalshi::KXSB-27-SF": {
+    "yes_ask": 0.07,
+    "no_ask": 0.95,
+    "timestamp": "2026-04-22T00:11:12.841166Z"
+  },
+  "poly::Israel and Lebanon normalize relations before 2027?": {
+    "yes_ask": 0.25,
+    "timestamp": "1776816704971",
+    "no_ask": 0.77
+  },
+  "kalshi::KXPREMIERLEAGUE-26-AVL": {
+    "yes_ask": 0.01,
+    "no_ask": 1.0,
+    "timestamp": "2026-04-22T00:11:24.193621Z"
+  },
+  "poly::Will the US confirm that aliens exist before 2027?": {
+    "yes_ask": 0.21,
+    "timestamp": "1776816679050",
+    "no_ask": 0.8
+  },
+  "poly::Will Canada win the 2026 FIFA World Cup?": {
+    "yes_ask": 0.006,
+    "timestamp": "1776816681046",
+    "no_ask": 0.995
+  },
+  "poly::US recognizes Reza Pahlavi as leader of Iran in 2026?": {
+    "yes_ask": 0.14,
+    "timestamp": "1776816712681",
+    "no_ask": 0.87
+  },
+  "kalshi::KXSB-27-IND": {
+    "yes_ask": 0.02,
+    "no_ask": 0.99,
+    "timestamp": "2026-04-22T00:11:23.214845Z"
+  },
+  "kalshi::KXNHL-26-BOS": {
+    "yes_ask": 0.02,
+    "no_ask": 0.99,
+    "timestamp": "2026-04-22T00:12:45.871062Z"
+  },
+  "poly::Trump out as President before 2027?": {
+    "yes_ask": 0.17,
+    "timestamp": "1776816707956",
+    "no_ask": 0.84
+  },
+  "poly::Will Reza Pahlavi enter Iran by June 30?": {
+    "yes_ask": 0.06,
+    "timestamp": "1776816685574",
+    "no_ask": 0.95
+  },
+  "kalshi::KXNBA-26-ATL": {
+    "yes_ask": 0.01,
+    "no_ask": 1.0,
+    "timestamp": "2026-04-22T00:19:34.578933Z"
+  },
+  "poly::Will Reza Pahlavi enter Iran by December 31?": {
+    "yes_ask": 0.16,
+    "timestamp": "1776816709276",
+    "no_ask": 0.85
+  },
+  "poly::Will Valtteri Bottas be the 2026 F1 Drivers' Champion?": {
+    "yes_ask": 0.005,
+    "timestamp": "1776816700880",
+    "no_ask": 0.996
+  },
+  "kalshi::KXNBAEAST-26-DET": {
+    "yes_ask": 0.14,
+    "no_ask": 0.87,
+    "timestamp": "2026-04-22T00:20:25.635912Z"
+  },
+  "poly::Will Lando Norris be the 2026 F1 Drivers' Champion?": {
+    "yes_ask": 0.029,
+    "timestamp": "1776817180317",
+    "no_ask": 0.973
+  },
+  "kalshi::KXSB-27-CIN": {
+    "yes_ask": 0.04,
+    "no_ask": 0.97,
+    "timestamp": "2026-04-22T00:11:41.584993Z"
+  },
+  "poly::Will there be at least 3000 measles cases in the U.S. in 2026?": {
+    "yes_ask": 0.72,
+    "timestamp": "1776816942307",
+    "no_ask": 0.35
+  },
+  "kalshi::KXPRESNOMR-28-STE": {
+    "yes_ask": 0.008,
+    "no_ask": 0.997,
+    "timestamp": "2026-04-22T00:11:51.389339Z"
+  },
+  "poly::Will Tucker Carlson win the 2028 Republican presidential nomination?": {
+    "yes_ask": 0.05,
+    "timestamp": "1776817289223",
+    "no_ask": 0.952
+  },
+  "poly::Will Tulsi Gabbard win the 2028 Republican presidential nomination?": {
+    "yes_ask": 0.013,
+    "timestamp": "1776816715907",
+    "no_ask": 0.988
+  },
+  "kalshi::KXNEXTUKPM-30-RLOW": {
+    "yes_ask": 0.07,
+    "no_ask": 0.96,
+    "timestamp": "2026-04-22T00:11:56.761329Z"
+  },
+  "kalshi::KXFOMEN-26-MED": {
+    "yes_ask": 0.02,
+    "no_ask": 0.99,
+    "timestamp": "2026-04-22T00:13:14.270022Z"
+  },
+  "kalshi::KXEPLRELEGATION-26-TOT": {
+    "yes_ask": 0.52,
+    "no_ask": 0.49,
+    "timestamp": "2026-04-22T00:22:17.529262Z"
+  },
+  "poly::Will no Fed rate cuts happen in 2026?": {
+    "yes_ask": 0.344,
+    "timestamp": "1776817356906",
+    "no_ask": 0.659
+  },
+  "kalshi::KXNBAEAST-26-ORL": {
+    "yes_ask": 0.02,
+    "no_ask": 0.99,
+    "timestamp": "2026-04-22T00:12:57.170829Z"
+  },
+  "kalshi::KXBOND-30-CAL": {
+    "yes_ask": 0.47,
+    "no_ask": 0.56,
+    "timestamp": "2026-04-22T00:13:25.455574Z"
+  },
+  "poly::Will J.D. Vance win the 2028 Republican presidential nomination?": {
+    "yes_ask": 0.393,
+    "timestamp": "1776816754026",
+    "no_ask": 0.608
+  },
+  "poly::Will the Fed decrease interest rates by 50+ bps after the June 2026 meeting?": {
+    "yes_ask": 0.01,
+    "timestamp": "1776816854066",
+    "no_ask": 0.991
+  },
+  "poly::Will Iv\u00e1n Cepeda Castro win the 1st round of the 2026 Colombian presidential election?": {
+    "yes_ask": 0.87,
+    "timestamp": "1776816742388",
+    "no_ask": 0.14
+  },
+  "poly::Will Iran hold a presidential election by June 30?": {
+    "yes_ask": 0.045,
+    "timestamp": "1776816765181",
+    "no_ask": 0.966
+  },
+  "kalshi::KXKIMKBAREXAM-27": {
+    "yes_ask": 0.44,
+    "no_ask": 0.6,
+    "timestamp": "2026-04-22T00:22:59.230731Z"
+  },
+  "kalshi::KXPRESNOMD-28-JBP": {
+    "yes_ask": 0.026,
+    "no_ask": 0.976,
+    "timestamp": "2026-04-22T00:12:34.839343Z"
+  },
+  "kalshi::KXELECTIRAN-26JUL01": {
+    "yes_ask": 0.04,
+    "no_ask": 0.975,
+    "timestamp": "2026-04-22T00:13:09.417142Z"
+  },
+  "kalshi::KXF1-26-GR": {
+    "yes_ask": 0.44,
+    "no_ask": 0.57,
+    "timestamp": "2026-04-22T00:12:51.666321Z"
+  },
+  "poly::Will Ivan Cepeda Castro win the 2026 Colombian presidential election?": {
+    "yes_ask": 0.35,
+    "timestamp": "1776816782992",
+    "no_ask": 0.66
+  },
+  "kalshi::KXSENATELAR-26-JFLEM": {
+    "yes_ask": 0.24,
+    "no_ask": 0.78,
+    "timestamp": "2026-04-22T00:13:07.325854Z"
+  },
+  "kalshi::KXMENWORLDCUP-26-AR": {
+    "yes_ask": 0.097,
+    "no_ask": 0.906,
+    "timestamp": "2026-04-22T00:22:41.142003Z"
+  },
+  "kalshi::KXPRESNOMR-28-GY": {
+    "yes_ask": 0.02,
+    "no_ask": 0.984,
+    "timestamp": "2026-04-22T00:13:35.376976Z"
+  },
+  "kalshi::CONTROLS-2026-R": {
+    "yes_ask": 0.5,
+    "no_ask": 0.51,
+    "timestamp": "2026-04-22T00:13:25.558362Z"
+  },
+  "poly::Will the Fed decrease interest rates by 25 bps after the April 2026 meeting?": {
+    "yes_ask": 0.003,
+    "timestamp": "1776816807193",
+    "no_ask": 0.998
+  },
+  "kalshi::KXPRESNOMR-28-BK": {
+    "yes_ask": 0.009,
+    "no_ask": 0.994,
+    "timestamp": "2026-04-22T00:13:31.627932Z"
+  },
+  "kalshi::KXSURVIVOR-26DEC31-CHRI": {
+    "yes_ask": 0.01,
+    "no_ask": 1.0,
+    "timestamp": "2026-04-22T00:13:31.342061Z"
+  },
+  "kalshi::KXVENEZUELALEADER2-26JUN01-NMAD": {
+    "yes_ask": 0.948,
+    "no_ask": 0.085,
+    "timestamp": "2026-04-22T00:13:44.932058Z"
+  },
+  "kalshi::FEDHIKE-26JUN30": {
+    "yes_ask": 0.05,
+    "no_ask": 0.97,
+    "timestamp": "2026-04-22T00:15:26.141514Z"
+  },
+  "kalshi::KXSENATEGAR-26-BC": {
+    "yes_ask": 0.03,
+    "no_ask": 0.997,
+    "timestamp": "2026-04-22T00:16:17.749551Z"
+  },
+  "kalshi::KXF1-26-MV": {
+    "yes_ask": 0.03,
+    "no_ask": 0.98,
+    "timestamp": "2026-04-22T00:14:35.208722Z"
+  },
+  "kalshi::KXBRPRES-26-LULA": {
+    "yes_ask": 0.42,
+    "no_ask": 0.59,
+    "timestamp": "2026-04-22T00:17:40.540089Z"
+  },
+  "kalshi::KXGOVOHNOMR-26-VR": {
+    "yes_ask": 0.987,
+    "no_ask": 0.03,
+    "timestamp": "2026-04-22T00:23:05.374612Z"
+  },
+  "kalshi::KXPRESNOMR-28-ES": {
+    "yes_ask": 0.002,
+    "no_ask": 0.999,
+    "timestamp": "2026-04-22T00:15:02.868845Z"
+  },
+  "poly::Will the Phoenix Suns win the 2026 NBA Finals?": {
+    "yes_ask": 0.002,
+    "timestamp": "1776816864545",
+    "no_ask": 0.999
+  },
+  "poly::Will the upper bound of the target federal funds rate be 3.75% at the end of 2026?": {
+    "yes_ask": 0.289,
+    "timestamp": "1776817311461",
+    "no_ask": 0.738
+  },
+  "poly::Will Derek Dooley be the Republican nominee for Senate in Georgia?": {
+    "yes_ask": 0.085,
+    "timestamp": "1776816872122",
+    "no_ask": 0.919
+  },
+  "kalshi::KXGOVOHNOMR-26-CPUT": {
+    "yes_ask": 0.031,
+    "no_ask": 0.976,
+    "timestamp": "2026-04-22T00:23:04.887923Z"
+  },
+  "poly::Will Vivek Ramaswamy win the 2026 Ohio Governor Republican primary election?": {
+    "yes_ask": 0.981,
+    "timestamp": "1776817385476",
+    "no_ask": 0.024
+  },
+  "poly::Will Casey Putsch win the 2026 Ohio Governor Republican primary election?": {
+    "yes_ask": 0.024,
+    "timestamp": "1776817386350",
+    "no_ask": 0.982
+  },
+  "kalshi::KXSENATEGAR-26-DDOO": {
+    "yes_ask": 0.068,
+    "no_ask": 0.948,
+    "timestamp": "2026-04-22T00:23:10.413918Z"
+  },
+  "poly::Will the Republican Party control the Senate after the 2026 Midterm elections?": {
+    "yes_ask": 0.48,
+    "timestamp": "1776816876300",
+    "no_ask": 0.53
+  },
+  "kalshi::KXNEXTUKPM-30-ABUR": {
+    "yes_ask": 0.13,
+    "no_ask": 0.93,
+    "timestamp": "2026-04-22T00:17:30.906917Z"
+  },
+  "poly::Will the Chicago Bears win the 2027 NFL league championship?": {
+    "yes_ask": 0.028,
+    "timestamp": "1776816888403",
+    "no_ask": 0.973
+  },
+  "kalshi::KXSB-27-DEN": {
+    "yes_ask": 0.05,
+    "no_ask": 0.97,
+    "timestamp": "2026-04-22T00:15:09.989191Z"
+  },
+  "kalshi::KXNBA-26-PHI": {
+    "yes_ask": 0.01,
+    "no_ask": 1.0,
+    "timestamp": "2026-04-22T00:21:25.744093Z"
+  },
+  "poly::Will Alexandria Ocasio-Cortez win the 2028 Democratic presidential nomination?": {
+    "yes_ask": 0.083,
+    "timestamp": "1776817090768",
+    "no_ask": 0.919
+  },
+  "poly::Will Brad Raffensperger win the 2026 Georgia Governor Republican primary election?": {
+    "yes_ask": 0.12,
+    "timestamp": "1776816943751",
+    "no_ask": 0.9
+  },
+  "poly::Will Mexico win the 2026 FIFA World Cup?": {
+    "yes_ask": 0.011,
+    "timestamp": "1776816997955",
+    "no_ask": 0.99
+  },
+  "kalshi::KXVISITIRAN-26JUL01-RPAH": {
+    "yes_ask": 0.056,
+    "no_ask": 0.954,
+    "timestamp": "2026-04-22T00:16:47.121973Z"
+  },
+  "poly::Will Michelle Obama win the 2028 US Presidential Election?": {
+    "yes_ask": 0.01,
+    "timestamp": "1776817318594",
+    "no_ask": 0.991
+  },
+  "kalshi::KXIMPEACH-26-JUN01": {
+    "yes_ask": 0.025,
+    "no_ask": 0.983,
+    "timestamp": "2026-04-22T00:18:19.452429Z"
+  },
+  "poly::Will Oh Se-hoon win the 2026 Seoul Mayoral Election": {
+    "yes_ask": 0.08,
+    "timestamp": "1776817032065",
+    "no_ask": 0.93
+  },
+  "poly::Will the Boston Red Sox win the 2026 World Series?": {
+    "yes_ask": 0.028,
+    "timestamp": "1776817034320",
+    "no_ask": 0.973
+  },
+  "poly::Will Earl Carter be the Republican nominee for Senate in Georgia?": {
+    "yes_ask": 0.02,
+    "timestamp": "1776817046432",
+    "no_ask": 0.982
+  },
+  "kalshi::KXGREENLAND-29": {
+    "yes_ask": 0.29,
+    "no_ask": 0.72,
+    "timestamp": "2026-04-22T00:17:21.006821Z"
+  },
+  "kalshi::KXAAPLCEOCHANGE-JUL": {
+    "yes_ask": 0.04,
+    "no_ask": 0.97,
+    "timestamp": "2026-04-22T00:17:29.852544Z"
+  },
+  "kalshi::KXGOVNYNOMD-25-KH": {
+    "yes_ask": 0.99,
+    "no_ask": 0.049,
+    "timestamp": "2026-04-22T00:17:45.408182Z"
+  },
+  "kalshi::KXZELENSKYPUTIN-29-26JUL": {
+    "yes_ask": 0.087,
+    "no_ask": 0.93,
+    "timestamp": "2026-04-22T00:18:42.338485Z"
+  },
+  "kalshi::KXBRBALLOT-26-LULA": {
+    "yes_ask": 0.84,
+    "no_ask": 0.17,
+    "timestamp": "2026-04-22T00:18:11.544054Z"
+  },
+  "poly::Will the Houston Texans win the 2027 NFL league championship?": {
+    "yes_ask": 0.031,
+    "timestamp": "1776817111190",
+    "no_ask": 0.97
+  },
+  "kalshi::KXFEDDECISION-26APR-C25": {
+    "yes_ask": 0.01,
+    "no_ask": 1.0,
+    "timestamp": "2026-04-22T00:18:41.531387Z"
+  },
+  "poly::Will the Washington Commanders win the 2027 NFL league championship?": {
+    "yes_ask": 0.013,
+    "timestamp": "1776817150349",
+    "no_ask": 0.989
+  },
+  "poly::Will Keisha Lance Bottoms win the 2026 Georgia Governor Democratic primary election?": {
+    "yes_ask": 0.74,
+    "timestamp": "1776817176714",
+    "no_ask": 0.29
+  },
+  "kalshi::KXSEOULMAYOR-26JUN03-CWON": {
+    "yes_ask": 0.91,
+    "no_ask": 0.099,
+    "timestamp": "2026-04-22T00:19:43.433621Z"
+  },
+  "poly::Will Manchester United finish in the top 4 of the EPL 2025\u201326 standings?": {
+    "yes_ask": 0.85,
+    "timestamp": "1776817390064",
+    "no_ask": 0.2
+  },
+  "poly::Will Donald Trump enter Iran by June 30?": {
+    "yes_ask": 0.027,
+    "timestamp": "1776817217834",
+    "no_ask": 0.978
+  },
+  "poly::Will Leverkusen finish in the top 4 of the Bundesliga 2025\u201326 standings?": {
+    "yes_ask": 0.15,
+    "timestamp": "1776817238319",
+    "no_ask": 0.96
+  },
+  "poly::Will Renan Santos finish in second place in the first round of the 2026 Brazilian presidential election?": {
+    "yes_ask": 0.071,
+    "timestamp": "1776817291565",
+    "no_ask": 0.938
+  },
+  "poly::Will Oscar Piastri be the 2026 F1 Drivers' Champion?": {
+    "yes_ask": 0.049,
+    "timestamp": "1776817363840",
+    "no_ask": 0.955
+  },
+  "kalshi::KXF1-26-OP": {
+    "yes_ask": 0.06,
+    "no_ask": 0.96,
+    "timestamp": "2026-04-22T00:21:58.887127Z"
+  },
+  "poly::Will Netherlands win the 2026 FIFA World Cup?": {
+    "yes_ask": 0.034,
+    "timestamp": "1776817339501",
+    "no_ask": 0.967
+  },
+  "poly::Will Norway win the 2026 FIFA World Cup?": {
+    "yes_ask": 0.024,
+    "timestamp": "1776817326806",
+    "no_ask": 0.977
+  },
+  "poly::Will Edmundo Gonz\u00e1lez be the leader of Venezuela end of 2026?": {
+    "yes_ask": 0.004,
+    "timestamp": "1776817348563",
+    "no_ask": 0.998
+  },
+  "poly::Will Manchester United finish in 3rd place in the 2025-26 English Premier League?": {
+    "yes_ask": 0.61,
+    "timestamp": "1776817383555",
+    "no_ask": 0.421
+  },
+  "poly::Will Wolves finish in last place in the 2025-26 English Premier League?": {
+    "yes_ask": 0.61,
+    "timestamp": "1776817387482",
+    "no_ask": 0.4
   }
 }

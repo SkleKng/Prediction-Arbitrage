@@ -415,32 +415,47 @@ export const MOCK_LIVE_PRICES: LivePrices = {
 };
 
 // Computed arbitrage opportunities from match + price data
-export function computeArbitrageOpportunities(): ArbitrageOpportunity[] {
+export function computeArbitrageOpportunities(customPrices?: LivePrices): ArbitrageOpportunity[] {
+  const pricesToUse = customPrices || MOCK_LIVE_PRICES;
+  
   return MOCK_MATCHES.map((match, idx) => {
     const polyKey = `poly::${match.polymarket.title}`;
     const kalshiKey = `kalshi::${match.kalshi.ticker}`;
-    const polyPrice = MOCK_LIVE_PRICES[polyKey] || null;
-    const kalshiPrice = MOCK_LIVE_PRICES[kalshiKey] || null;
+    const polyPrice = pricesToUse[polyKey] || null;
+    const kalshiPrice = pricesToUse[kalshiKey] || null;
 
-    const polyYes = polyPrice?.yes_ask ?? 0;
-    const kalshiYes = kalshiPrice?.yes_ask ?? 0;
+    const polyYesAsk = polyPrice?.yes_ask ?? 0;
+    const polyNoAsk = polyPrice?.no_ask ?? 0;
+    const kalshiYesAsk = kalshiPrice?.yes_ask ?? 0;
+    const kalshiNoAsk = kalshiPrice?.no_ask ?? 0;
 
-    // Arbitrage calculation
-    const costA = polyYes + (1 - kalshiYes);
-    const costB = kalshiYes + (1 - polyYes);
-    const profitA = (1 - costA) * 100;
-    const profitB = (1 - costB) * 100;
+    // Arbitrage calculation based on MARKET ORDERS (crossing the spread)
+    // To hedge, we must buy YES on one exchange and buy NO on the other exchange at the ASK price.
+    
+    // Scenario A: Buy YES on Polymarket, Buy NO on Kalshi
+    const costA = (polyYesAsk > 0 && kalshiNoAsk > 0) ? (polyYesAsk + kalshiNoAsk) : Infinity;
+    
+    // Scenario B: Buy YES on Kalshi, Buy NO on Polymarket
+    const costB = (kalshiYesAsk > 0 && polyNoAsk > 0) ? (kalshiYesAsk + polyNoAsk) : Infinity;
+
+    const profitA = costA !== Infinity ? (1 - costA) * 100 : -Infinity;
+    const profitB = costB !== Infinity ? (1 - costB) * 100 : -Infinity;
 
     let spread = 0;
     let direction: ArbitrageOpportunity["direction"] = "none";
-    if (profitA > profitB && profitA > 0) {
+    
+    if (profitA > profitB && profitA !== -Infinity) {
       spread = profitA;
       direction = "poly_yes_kalshi_no";
-    } else if (profitB > 0) {
+    } else if (profitB > profitA && profitB !== -Infinity) {
       spread = profitB;
       direction = "kalshi_yes_poly_no";
+    } else if (profitA === profitB && profitA !== -Infinity) {
+      spread = profitA;
+      direction = "poly_yes_kalshi_no";
     } else {
-      spread = Math.max(profitA, profitB);
+      spread = 0; // No valid market orders available
+      direction = "none";
     }
 
     return {

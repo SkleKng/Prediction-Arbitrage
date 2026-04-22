@@ -58,40 +58,45 @@ async def polymarket_ws(matches):
 
     book = {}
 
-    async with websockets.connect(url) as ws:
-        await ws.send(json.dumps({
-            "type": "market",
-            "assets_ids": all_token_ids,
-            "custom_feature_enabled": True
-        }))
-        print(f"[Polymarket] Subscribed to {len(matches)} markets ({len(all_token_ids)} tokens)")
+    while True:
+        try:
+            async with websockets.connect(url) as ws:
+                await ws.send(json.dumps({
+                    "type": "market",
+                    "assets_ids": all_token_ids,
+                    "custom_feature_enabled": True
+                }))
+                print(f"[Polymarket] Subscribed to {len(matches)} markets ({len(all_token_ids)} tokens)")
 
-        while True:
-            try:
-                raw = await asyncio.wait_for(ws.recv(), timeout=10)
-                if raw == "PONG":
-                    continue
+                while True:
+                    try:
+                        raw = await asyncio.wait_for(ws.recv(), timeout=10)
+                        if raw == "PONG":
+                            continue
 
-                msg = json.loads(raw)
+                        msg = json.loads(raw)
 
-                if msg.get("event_type") == "best_bid_ask":
-                    asset_id = msg.get("asset_id")
-                    if asset_id not in token_map:
-                        continue
+                        if msg.get("event_type") == "best_bid_ask":
+                            asset_id = msg.get("asset_id")
+                            if asset_id not in token_map:
+                                continue
 
-                    market_key, side = token_map[asset_id]
-                    if market_key not in book:
-                        book[market_key] = {}
+                            market_key, side = token_map[asset_id]
+                            if market_key not in book:
+                                book[market_key] = {}
 
-                    book[market_key][side] = float(msg.get("best_ask", 0))
-                    book[market_key]["timestamp"] = msg.get("timestamp", "")
+                            book[market_key][side] = float(msg.get("best_ask", 0))
+                            book[market_key]["timestamp"] = msg.get("timestamp", "")
 
-                    if "yes_ask" in book[market_key] and "no_ask" in book[market_key]:
-                        update_price(market_key, book[market_key].copy())
-                        print(f"[Polymarket] {market_key[:60]} | YES ask: {book[market_key]['yes_ask']:.3f} NO ask: {book[market_key]['no_ask']:.3f}")
+                            if "yes_ask" in book[market_key] and "no_ask" in book[market_key]:
+                                update_price(market_key, book[market_key].copy())
+                                print(f"[Polymarket] {market_key[:60]} | YES ask: {book[market_key]['yes_ask']:.3f} NO ask: {book[market_key]['no_ask']:.3f}")
 
-            except asyncio.TimeoutError:
-                await ws.send("PING")
+                    except asyncio.TimeoutError:
+                        await ws.send("PING")
+        except Exception as e:
+            print(f"[Polymarket] Connection error: {e}. Reconnecting in 5 seconds...")
+            await asyncio.sleep(5)
 
 # ── Kalshi WebSocket ──────────────────────────────────────────────────────────
 def load_private_key(private_key_str: str):
@@ -115,61 +120,70 @@ async def kalshi_ws(matches, api_key: str, private_key_str: str):
     path = "/trade-api/ws/v2"
 
     private_key = load_private_key(private_key_str)
-    timestamp = str(int(datetime.datetime.now().timestamp() * 1000))
-    signature = sign_pss_text(private_key, timestamp + "GET" + path)  # <-- use PSS now
-
-    headers = {
-        "KALSHI-ACCESS-KEY": api_key,
-        "KALSHI-ACCESS-TIMESTAMP": timestamp,
-        "KALSHI-ACCESS-SIGNATURE": signature,
-    }
-
     ticker_map = {m["kalshi_ticker"]: m["kalshi_title"] for m in matches}
 
-    async with websockets.connect(url, additional_headers=headers) as ws:
-        for i, m in enumerate(matches):
-            await ws.send(json.dumps({
-                "id": i + 1,
-                "cmd": "subscribe",
-                "params": {
-                    "channels": ["ticker"],
-                    "market_tickers": [m["kalshi_ticker"]]
-                }
-            }))
+    while True:
+        try:
+            timestamp = str(int(datetime.datetime.now().timestamp() * 1000))
+            signature = sign_pss_text(private_key, timestamp + "GET" + path)  # <-- use PSS now
 
-        print(f"[Kalshi] Subscribed to {len(matches)} markets")
+            headers = {
+                "KALSHI-ACCESS-KEY": api_key,
+                "KALSHI-ACCESS-TIMESTAMP": timestamp,
+                "KALSHI-ACCESS-SIGNATURE": signature,
+            }
 
-        while True:
-            try:
-                raw = await asyncio.wait_for(ws.recv(), timeout=10)
-                msg = json.loads(raw)
+            async with websockets.connect(url, additional_headers=headers) as ws:
+                for i, m in enumerate(matches):
+                    await ws.send(json.dumps({
+                        "id": i + 1,
+                        "cmd": "subscribe",
+                        "params": {
+                            "channels": ["ticker"],
+                            "market_tickers": [m["kalshi_ticker"]]
+                        }
+                    }))
 
+                print(f"[Kalshi] Subscribed to {len(matches)} markets")
 
-                if msg.get("type") != "ticker":
-                    continue
-
-                data = msg.get("msg", {})
-                ticker = data.get("market_ticker")
-                if not ticker or ticker not in ticker_map:
-                    continue
-
-                yes_ask = data.get("yes_ask_dollars")
-                no_ask = data.get("no_ask_dollars")
-
-                if not yes_ask:
-                    continue
-
-                market_key = f"kalshi::{ticker}"
-                update_price(market_key, {
-                    "yes_ask": float(yes_ask),
-                    "no_ask": float(no_ask) if no_ask else None,
-                    "timestamp": data.get("time", "")
-                })
-                print(f"[Kalshi] {market_key[:60]} | YES ask: {float(yes_ask):.3f}")
+                while True:
+                    try:
+                        raw = await asyncio.wait_for(ws.recv(), timeout=10)
+                        msg = json.loads(raw)
 
 
-            except asyncio.TimeoutError:
-                pass
+                        if msg.get("type") != "ticker":
+                            continue
+
+                        data = msg.get("msg", {})
+                        ticker = data.get("market_ticker")
+                        if not ticker or ticker not in ticker_map:
+                            continue
+
+                        yes_ask = data.get("yes_ask_dollars")
+                        no_ask = data.get("no_ask_dollars")
+                        yes_bid = data.get("yes_bid_dollars")
+                        
+                        if no_ask is None and yes_bid is not None:
+                            no_ask = round(1.0 - float(yes_bid), 3)
+
+                        if not yes_ask:
+                            continue
+
+                        market_key = f"kalshi::{ticker}"
+                        update_price(market_key, {
+                            "yes_ask": float(yes_ask),
+                            "no_ask": float(no_ask) if no_ask is not None else None,
+                            "timestamp": data.get("time", "")
+                        })
+                        print(f"[Kalshi] {market_key[:60]} | YES ask: {float(yes_ask):.3f}")
+
+
+                    except asyncio.TimeoutError:
+                        pass
+        except Exception as e:
+            print(f"[Kalshi] Connection error: {e}. Reconnecting in 5 seconds...")
+            await asyncio.sleep(5)
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 async def main(api_key: str, private_key_str: str):
