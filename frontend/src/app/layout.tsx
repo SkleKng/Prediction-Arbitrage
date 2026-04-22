@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import { DotDistortionBackground } from "@/components/DotDistortionBackground";
 import "./globals.css";
 
 const inter = Inter({
@@ -31,9 +32,9 @@ export default function RootLayout({
       >
         <div className="relative min-h-screen">
           {/* Ambient background grid */}
-          <div className="bg-grid fixed inset-0 pointer-events-none opacity-20" />
+          <DotDistortionBackground />
           {/* Radial gradient vignette */}
-          <div className="fixed inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(5,5,5,0.9)_80%)]" />
+          <div className="fixed inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(5,5,5,0.9)_80%)] z-0" />
           {/* Content */}
           <div className="relative z-10">{children}</div>
         </div>
