@@ -26,7 +26,7 @@ export function CommandCenter({
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className="sticky top-0 z-50 glass border-b border-glass-border"
+      className="sticky top-0 z-50 bg-obsidian border-b border-white/10 shadow-2xl"
     >
       <div className="max-w-[1400px] mx-auto px-6 py-3">
         {/* Top row - Brand + Status */}
@@ -34,20 +34,13 @@ export function CommandCenter({
           {/* Brand */}
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2">
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-              >
-                <Zap className="w-5 h-5 text-neon-green" />
-              </motion.div>
-              <h1 className="text-lg font-semibold tracking-tight">
-                <span className="gradient-text">ARBIT</span>
-                <span className="text-white/60">RAGE</span>
+              <h1 className="text-xl font-black tracking-widest uppercase glitch-text">
+                AXIOM
               </h1>
             </div>
             <div className="h-6 w-px bg-white/10" />
-            <span className="text-[10px] uppercase tracking-[0.2em] text-white/30">
-              Command Center
+            <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-white/40">
+              Nexus Control
             </span>
           </div>
 
