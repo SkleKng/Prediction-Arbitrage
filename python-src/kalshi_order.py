@@ -96,10 +96,11 @@ if __name__ == "__main__":
     # Example usage:
     print("Placing order...")
     result = place_order(
-        ticker="KXPRESNOMD-28-GN",
-        action="buy",
+        ticker="KXMENWORLDCUP-26-FR",
+        action="sell",
         side="yes",
         count=1,
-        price_cents=1 # Limit price in cents
+        price_cents=16 # Limit price in cents
     )
+
     print(json.dumps(result, indent=2))
