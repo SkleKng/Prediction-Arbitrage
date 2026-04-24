@@ -1,32 +1,27 @@
 @import "tailwindcss";
 
-/* shadcn-style design tokens used by ui/motion-footer. Tuned to the
-   AXIOM obsidian palette so the cinematic footer matches the dashboard. */
-:root {
-  --background: oklch(0.08 0.01 270);
-  --foreground: oklch(0.98 0 0);
-  --primary: oklch(0.82 0.22 150);
-  --secondary: oklch(0.72 0.18 235);
-  --muted-foreground: oklch(0.65 0.02 270);
-  --destructive: oklch(0.65 0.24 15);
-  --border: oklch(1 0 0 / 0.08);
-}
-
 @theme {
-  --color-obsidian: #0a0a0f;
-  --color-obsidian-light: #12121a;
-  --color-obsidian-lighter: #1a1a2e;
-  --color-obsidian-border: #2a2a3e;
+  --color-obsidian: #050505;
+  --color-obsidian-light: #0a0a0a;
+  --color-obsidian-lighter: #111111;
+  --color-obsidian-border: #1a1a1a;
+  
+  /* Primary brand colors from the image */
+  --color-axiom-cyan: #00f0ff;
+  --color-axiom-magenta: #ff003c;
+  
+  /* Status colors */
   --color-neon-green: #00ff88;
   --color-neon-green-dim: #00cc6a;
   --color-neon-red: #ff3355;
   --color-neon-red-dim: #cc2944;
-  --color-neon-blue: #00b4ff;
+  --color-neon-blue: #00f0ff;
   --color-neon-yellow: #ffcc00;
   --color-neon-purple: #a855f7;
-  --color-glass: rgba(255, 255, 255, 0.03);
-  --color-glass-border: rgba(255, 255, 255, 0.08);
-  --color-glass-hover: rgba(255, 255, 255, 0.06);
+  
+  --color-glass: rgba(255, 255, 255, 0.02);
+  --color-glass-border: rgba(255, 255, 255, 0.05);
+  --color-glass-hover: rgba(255, 255, 255, 0.04);
 
   --font-mono: "JetBrains Mono", "Geist Mono", ui-monospace, monospace;
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
@@ -107,8 +102,25 @@
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #00ff88, #00b4ff);
+  background: linear-gradient(135deg, #00ff88, #00b4ff, #a855f7);
+  background-size: 200% auto;
+  animation: gradient-flow 3s linear infinite;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* Glitch text effect for the AXIOM logo */
+.glitch-text {
+  position: relative;
+  color: white;
+  text-shadow: 
+    -3px 0px 0px var(--color-axiom-cyan),
+    3px 0px 0px var(--color-axiom-magenta);
+  letter-spacing: -0.05em;
+}
+
+@keyframes gradient-flow {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
 }
