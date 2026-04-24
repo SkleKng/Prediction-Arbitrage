@@ -41,7 +41,7 @@ client = ClobClient(
     key=private_key,
     chain_id=chain_id,
     creds=api_creds,
-    signature_type=0,       # 0 = EOA (regular wallet)
+    signature_type=2,       # 0 = EOA (regular wallet)
     funder=wallet_address
 )
 
