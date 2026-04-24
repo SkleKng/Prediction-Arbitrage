@@ -2,18 +2,30 @@
 
 import { motion } from "framer-motion";
 
-type Status = "online" | "connected" | "active" | "degraded" | "reconnecting" | "processing" | "offline" | "disconnected" | "idle";
+type Status =
+  | "online"
+  | "connected"
+  | "active"
+  | "degraded"
+  | "reconnecting"
+  | "processing"
+  | "offline"
+  | "disconnected"
+  | "idle";
 
-const statusConfig: Record<Status, { color: string; ringColor: string; label: string }> = {
-  online: { color: "bg-neon-green", ringColor: "bg-neon-green/30", label: "Online" },
-  connected: { color: "bg-neon-green", ringColor: "bg-neon-green/30", label: "Connected" },
-  active: { color: "bg-neon-green", ringColor: "bg-neon-green/30", label: "Active" },
-  degraded: { color: "bg-neon-yellow", ringColor: "bg-neon-yellow/30", label: "Degraded" },
-  reconnecting: { color: "bg-neon-yellow", ringColor: "bg-neon-yellow/30", label: "Reconnecting" },
-  processing: { color: "bg-neon-blue", ringColor: "bg-neon-blue/30", label: "Processing" },
+const statusConfig: Record<
+  Status,
+  { color: string; ringColor: string; label: string }
+> = {
+  online: { color: "bg-emerald-400", ringColor: "bg-emerald-400/40", label: "Online" },
+  connected: { color: "bg-emerald-400", ringColor: "bg-emerald-400/40", label: "Connected" },
+  active: { color: "bg-emerald-400", ringColor: "bg-emerald-400/40", label: "Active" },
+  degraded: { color: "bg-amber-400", ringColor: "bg-amber-400/40", label: "Degraded" },
+  reconnecting: { color: "bg-amber-400", ringColor: "bg-amber-400/40", label: "Reconnecting" },
+  processing: { color: "bg-sky-400", ringColor: "bg-sky-400/40", label: "Processing" },
   idle: { color: "bg-white/40", ringColor: "bg-white/10", label: "Idle" },
-  offline: { color: "bg-neon-red", ringColor: "bg-neon-red/30", label: "Offline" },
-  disconnected: { color: "bg-neon-red", ringColor: "bg-neon-red/30", label: "Disconnected" },
+  offline: { color: "bg-red-400", ringColor: "bg-red-400/40", label: "Offline" },
+  disconnected: { color: "bg-red-400", ringColor: "bg-red-400/40", label: "Disconnected" },
 };
 
 export function StatusDot({ status, label }: { status: Status; label: string }) {
@@ -22,7 +34,6 @@ export function StatusDot({ status, label }: { status: Status; label: string }) 
   return (
     <div className="flex items-center gap-2">
       <div className="relative flex items-center justify-center">
-        {/* Pulsing ring */}
         <motion.div
           className={`absolute w-3 h-3 rounded-full ${config.ringColor}`}
           animate={{
@@ -35,14 +46,13 @@ export function StatusDot({ status, label }: { status: Status; label: string }) 
             ease: "easeInOut",
           }}
         />
-        {/* Core dot */}
-        <div className={`w-2 h-2 rounded-full ${config.color}`} />
+        <div className={`w-1.5 h-1.5 rounded-full ${config.color}`} />
       </div>
-      <div className="flex flex-col">
-        <span className="text-[10px] uppercase tracking-wider text-white/40 leading-none">
+      <div className="flex flex-col leading-none">
+        <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-white/35">
           {label}
         </span>
-        <span className="text-xs font-mono text-white/70 leading-tight">
+        <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/70 mt-0.5">
           {config.label}
         </span>
       </div>

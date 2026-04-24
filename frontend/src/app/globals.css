@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+/* shadcn-style design tokens used by ui/motion-footer. Tuned to the
+   AXIOM obsidian palette so the cinematic footer matches the dashboard. */
+:root {
+  --background: oklch(0.08 0.01 270);
+  --foreground: oklch(0.98 0 0);
+  --primary: oklch(0.82 0.22 150);
+  --secondary: oklch(0.72 0.18 235);
+  --muted-foreground: oklch(0.65 0.02 270);
+  --destructive: oklch(0.65 0.24 15);
+  --border: oklch(1 0 0 / 0.08);
+}
+
 @theme {
   --color-obsidian: #0a0a0f;
   --color-obsidian-light: #12121a;

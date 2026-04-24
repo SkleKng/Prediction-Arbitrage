@@ -62,48 +62,41 @@ export function useArbitrageData(): ArbitrageDataState {
   // Simulate price ticks for demo purposes
   const tickRef = useRef<ReturnType<typeof setInterval>>(undefined);
 
-  const simulateTick = useCallback(() => {
-    setState((prev) => {
-      const newPrices = { ...prev.livePrices };
-      const keys = Object.keys(newPrices);
+  // Fetch live prices from the Python backend output
+  const fetchLivePrices = useCallback(async () => {
+    try {
+      const res = await fetch("/api/prices");
+      if (!res.ok) return;
+      const liveData = await res.json();
 
-      // Randomly update 2-3 prices
-      for (let i = 0; i < 3; i++) {
-        const key = keys[Math.floor(Math.random() * keys.length)];
-        if (newPrices[key]) {
-          const drift = (Math.random() - 0.5) * 0.01;
-          const newYes = Math.max(
-            0.001,
-            Math.min(0.999, newPrices[key].yes_ask + drift)
-          );
-          newPrices[key] = {
-            ...newPrices[key],
-            yes_ask: parseFloat(newYes.toFixed(4)),
-            no_ask: parseFloat((1 - newYes).toFixed(4)),
-            timestamp: Date.now().toString(),
-          };
-        }
-      }
+      setState((prev) => {
+        // Recompute PnL with slight drift (for demo purposes)
+        const pnlDrift = (Math.random() - 0.45) * 15;
+        
+        // Ensure we merge with the initial mock prices as a fallback so we don't get 0s for missing markets
+        const mergedPrices = { ...MOCK_LIVE_PRICES, ...liveData };
 
-      // Recompute PnL with slight drift
-      const pnlDrift = (Math.random() - 0.45) * 15;
-
-      return {
-        ...prev,
-        livePrices: newPrices,
-        pnl24hr: prev.pnl24hr + pnlDrift,
-        // In production, recompute opportunities from new prices
-        // For now, keep existing opportunities
-      };
-    });
+        return {
+          ...prev,
+          livePrices: mergedPrices,
+          opportunities: computeArbitrageOpportunities(mergedPrices),
+          pnl24hr: prev.pnl24hr + pnlDrift,
+        };
+      });
+    } catch (err) {
+      // Use console.warn instead of console.error to prevent the Next.js error overlay
+      // from popping up during transient network errors or dev server restarts
+      console.warn("Failed to fetch live prices (transient network error)", err);
+    }
   }, []);
 
   useEffect(() => {
-    tickRef.current = setInterval(simulateTick, 3000);
+    // Poll the API every 3 seconds to get the latest prices from the Python script
+    tickRef.current = setInterval(fetchLivePrices, 3000);
     return () => {
       if (tickRef.current) clearInterval(tickRef.current);
     };
-  }, [simulateTick]);
+  }, [fetchLivePrices]);
 
   return state;
 }
