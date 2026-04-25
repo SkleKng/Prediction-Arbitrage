@@ -1,10 +1,13 @@
 import json
+import os
 import re
 from pathlib import Path
+import time
 
 
 INPUT_PATH = Path("matches/embed_matches.json")
 OUTPUT_PATH = Path("matches/ai_matches.json")
+ENV_PATH = Path(".env")
 
 
 CHECKPOINT_PATTERNS = (
@@ -106,30 +109,122 @@ def date_gap_is_small(poly, kalshi):
     )
 
 
+GEMINI_CACHE = {}
+
+
+def read_env_value(name):
+    if not ENV_PATH.exists():
+        return None
+
+    for line in ENV_PATH.read_text(encoding="utf-8").splitlines():
+        key, separator, value = line.partition("=")
+        if separator and key.strip() == name:
+            return value.strip().strip('"').strip("'")
+    return None
+
+
+GOOGLE_API_KEY = (
+    os.getenv("GOOGLE_API_KEY")
+    or read_env_value("GOOGLE_API_KEY")
+    or "AQ.Ab8RN6LfYYftPH-eYORfGpsHhVyc-zaJHBlI2jjGx0QvIydP3Q"
+)
+
+
+def gemini_market_text(poly, kalshi):
+    poly_text = "\n".join(
+        part
+        for part in (
+            f"Title: {poly.get('title', '')}",
+            f"Description: {poly.get('description', '')}",
+        )
+        if part.strip()
+    )
+    kalshi_text = "\n".join(
+        part
+        for part in (
+            f"Title: {kalshi.get('title', '')}",
+            f"Rules: {kalshi.get('rules', '')}",
+            f"Primary rules: {kalshi.get('rules_primary', '')}",
+        )
+        if part.strip()
+    )
+    return poly_text, kalshi_text
+
+
+def gemini_cache_key(poly, kalshi):
+    poly_text, kalshi_text = gemini_market_text(poly, kalshi)
+    return poly_text, kalshi_text
+
+def batch_check_with_gemini(pairs_batch):
+    import google.genai as genai
+    from google.genai import types
+    
+    client = genai.Client(api_key=GOOGLE_API_KEY)
+    
+    prompt = "Are the following pairs of prediction market questions asking the exact same thing, including the same event, outcome, and resolution criteria, even if worded differently? Return a JSON array of strings, where each string is exactly 'yes' or 'no', corresponding to the pairs in order. For example: [\"yes\", \"no\", \"yes\"].\n\n"
+    for i, (p, k) in enumerate(pairs_batch):
+        prompt += f'Pair {i}:\nPolymarket:\n{p}\n\nKalshi:\n{k}\n\n'
+        
+    # Wait if we hit free tier limits (tokens or RPM)
+    max_retries = 3
+    for _ in range(max_retries):
+        try:
+            time.sleep(5)  # Base sleep between batches
+            
+            response = client.models.generate_content(
+                model='gemini-2.5-flash',
+                contents=prompt,
+                config=types.GenerateContentConfig(
+                    response_mime_type="application/json"
+                )
+            )
+            
+            text = response.text
+            
+            # Use regex to find the JSON array inside the response
+            match = re.search(r'\[.*?\]', text, re.DOTALL)
+            if match:
+                text = match.group(0)
+            
+            results = json.loads(text)
+            
+            if not isinstance(results, list):
+                results = ["no"] * len(pairs_batch)
+            while len(results) < len(pairs_batch):
+                results.append("no")
+            return [str(r).lower() for r in results[:len(pairs_batch)]]
+            
+        except Exception as e:
+            print(f"Gemini API error in batch: {e}")
+            error_message = str(e)
+            if (
+                "GenerateRequestsPerDayPerProjectPerModel-FreeTier" in error_message
+                or "prepayment credits are depleted" in error_message
+            ):
+                raise RuntimeError("Gemini quota is exhausted; ai_matches.json was not updated.") from e
+            if '429' in error_message:
+                print("Rate limit hit, sleeping for 60 seconds...")
+                time.sleep(60)
+                continue
+            time.sleep(5) # Small sleep on error before retry
+            
+    raise RuntimeError("Gemini API failed after retries; refusing to write non-AI matches.")
+
+
 def same_market(poly, kalshi):
-    poly_title = normalize(poly.get("title", ""))
-    kalshi_title = normalize(kalshi.get("title", ""))
+    poly_title_raw = poly.get("title", "")
+    kalshi_title_raw = kalshi.get("title", "")
+    poly_title = normalize(poly_title_raw)
+    kalshi_title = normalize(kalshi_title_raw)
+    
     if poly_title == kalshi_title:
         return "yes"
+        
+    gemini_match = GEMINI_CACHE.get(gemini_cache_key(poly, kalshi))
+    if gemini_match in ("yes", "no"):
+        return gemini_match
 
-    combined = combined_text(poly, kalshi)
-
-    if "ipo first" in combined:
-        key_terms = ("anthropic", "openai")
-        return "yes" if all(term in combined for term in key_terms) else "no"
-
-    if "save act" in combined and "h r 22" in combined:
-        return "yes"
-
-    checkpoint_conflict = has_checkpoint_style(poly) and has_ongoing_style(kalshi)
-    if checkpoint_conflict and not date_gap_is_small(poly, kalshi):
-        return "no"
-
-    poly_words = set(poly_title.split())
-    kalshi_words = set(kalshi_title.split())
-    overlap = len(poly_words & kalshi_words)
-    min_size = min(len(poly_words), len(kalshi_words)) or 1
-    return "yes" if overlap / min_size >= 0.6 else "no"
+    return "no"
 
 
 def resolved_status(poly, kalshi):
@@ -194,10 +289,48 @@ def transform_match(match):
 
 def main():
     payload = json.loads(INPUT_PATH.read_text(encoding="utf-8"))
-    output = []
-
+    
+    print("Gathering unique pairs for Gemini evaluation...")
+    gemini_pairs_set = set()
     for bucket in payload:
-        transformed_matches = [transform_match(match) for match in bucket.get("matches", [])]
+        for match in bucket.get("matches", []):
+            poly = match.get("polymarket", {})
+            kalshi = match.get("kalshi", {})
+            poly_title_raw = poly.get("title", "")
+            kalshi_title_raw = kalshi.get("title", "")
+            poly_title = normalize(poly_title_raw)
+            kalshi_title = normalize(kalshi_title_raw)
+            if poly_title != kalshi_title:
+                gemini_pairs_set.add(gemini_cache_key(poly, kalshi))
+                
+    gemini_pairs = list(gemini_pairs_set)
+    batch_size = 25
+    total_batches = (len(gemini_pairs) + batch_size - 1) // batch_size
+    
+    print(f"Total unique pairs to check with Gemini: {len(gemini_pairs)} (in {total_batches} batches)")
+    for i in range(0, len(gemini_pairs), batch_size):
+        print(f"  Processing Gemini batch {i//batch_size + 1}/{total_batches}...")
+        batch = gemini_pairs[i:i+batch_size]
+        results = batch_check_with_gemini(batch)
+        for (p, k), res in zip(batch, results):
+            if res in ("yes", "no"):
+                GEMINI_CACHE[(p, k)] = res
+            else:
+                GEMINI_CACHE[(p, k)] = "yes" if "yes" in res else "no"
+                
+    output = []
+    total_buckets = len(payload)
+
+    for i, bucket in enumerate(payload):
+        print(f"Processing bucket {i+1}/{total_buckets}...")
+        matches = bucket.get("matches", [])
+        total_matches = len(matches)
+        transformed_matches = []
+        for j, match in enumerate(matches):
+            if j % 100 == 0:
+                print(f"  Processing match {j}/{total_matches} in bucket {i+1}...")
+            transformed_matches.append(transform_match(match))
+            
         output.append(
             {
                 "threshold": bucket.get("threshold"),
