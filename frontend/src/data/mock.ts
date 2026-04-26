@@ -414,11 +414,18 @@ export const MOCK_LIVE_PRICES: LivePrices = {
   },
 };
 
-// Computed arbitrage opportunities from match + price data
-export function computeArbitrageOpportunities(customPrices?: LivePrices): ArbitrageOpportunity[] {
+// Computed arbitrage opportunities from match + price data.
+// Both args are optional so the hook can pre-render with mocks before
+// real backend data arrives, then re-render once /api/matches and
+// /api/prices have responded.
+export function computeArbitrageOpportunities(
+  customMatches?: MatchPair[],
+  customPrices?: LivePrices
+): ArbitrageOpportunity[] {
   const pricesToUse = customPrices || MOCK_LIVE_PRICES;
-  
-  return MOCK_MATCHES.map((match, idx) => {
+  const matchesToUse = customMatches && customMatches.length > 0 ? customMatches : MOCK_MATCHES;
+
+  return matchesToUse.map((match, idx) => {
     const polyKey = `poly::${match.polymarket.title}`;
     const kalshiKey = `kalshi::${match.kalshi.ticker}`;
     const polyPrice = pricesToUse[polyKey] || null;
