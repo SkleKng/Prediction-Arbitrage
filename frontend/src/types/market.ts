@@ -5,7 +5,7 @@ export interface PolymarketMarket {
   slug: string;
   description: string;
   end_date: string;
-  category: string;
+  category?: string;
   liquidity: string;
   fee: number | null;
   outcomePrices: string; // JSON string: '["0.55", "0.45"]'
@@ -21,7 +21,7 @@ export interface KalshiMarket {
   subtitle: string;
   rules: string;
   close_time: string;
-  status: string;
+  status?: string;
   volume_fp: string;
   rules_primary: string;
   rules_secondary: string;
