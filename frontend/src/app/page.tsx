@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CommandCenter } from "@/components/CommandCenter";
 import { TabNav, type TabId } from "@/components/TabNav";
@@ -8,6 +8,8 @@ import { StatsGrid } from "@/components/StatsGrid";
 import { ArbitrageFeed } from "@/components/ArbitrageFeed";
 import { AIReconciliationVisualizer } from "@/components/AIReconciliationVisualizer";
 import { DashboardHero } from "@/components/DashboardHero";
+import { SystemBoot } from "@/components/SystemBoot";
+import { AmbientBackdrop } from "@/components/ui/ambient-backdrop";
 import { useArbitrageData } from "@/hooks/useArbitrageData";
 
 const pageVariants = {
@@ -23,6 +25,10 @@ const pageTransition = {
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState<TabId>("dashboard");
+  // `isBooted` flips to true after the SystemBoot overlay finishes fading
+  // out. Once true, SystemBoot is completely removed from the tree so the
+  // GSAP canvas loop stops burning CPU while the dashboard is live.
+  const [isBooted, setIsBooted] = useState(false);
   const {
     opportunities,
     systemStatus,
@@ -33,36 +39,54 @@ export default function Home() {
     matches,
   } = useArbitrageData();
 
-  return (
-    <div className="min-h-screen flex flex-col">
-      {/* Command Center Header */}
-      <CommandCenter
-        status={systemStatus}
-        totalCapital={totalCapital}
-        pnl24hr={pnl24hr}
-        activePositions={activePositions}
-        totalMatches={totalMatches}
-      />
+  const topOpportunities = useMemo(() => opportunities.slice(0, 5), [opportunities]);
 
-      {/* Tab navigation bar */}
-      <div className="sticky top-[88px] z-40 glass border-b border-white/5">
-        <div className="max-w-[1400px] mx-auto px-6 py-2 flex items-center justify-between">
-          <TabNav activeTab={activeTab} onTabChange={setActiveTab} />
-          <div className="flex items-center gap-2">
-            <motion.div
-              className="w-1.5 h-1.5 rounded-full bg-neon-green"
-              animate={{ opacity: [1, 0.3, 1] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-            />
-            <span className="text-[10px] uppercase tracking-[0.15em] text-white/30 font-mono">
-              Live
-            </span>
+  return (
+    <div className="relative min-h-screen flex flex-col font-sans text-white">
+      {!isBooted && <SystemBoot onFadeComplete={() => setIsBooted(true)} />}
+
+      {/* Same ambient background used on the landing — aurora orbs, noise,
+          vignette. Sits behind the entire dashboard so the visual language
+          carries through from boot → command center. */}
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        <AmbientBackdrop />
+      </div>
+
+      {/* HUD corner brackets — framing for the viewport, identical to boot */}
+      <CornerBrackets />
+
+      {/* Vertical edge labels — flavor, matches landing */}
+      <div className="pointer-events-none fixed left-3 top-1/2 z-10 -translate-y-1/2 [writing-mode:vertical-rl] rotate-180 font-mono text-[10px] uppercase tracking-[0.4em] text-white/20 hidden lg:block">
+        Polymarket × Kalshi
+      </div>
+      <div className="pointer-events-none fixed right-3 top-1/2 z-10 -translate-y-1/2 [writing-mode:vertical-rl] font-mono text-[10px] uppercase tracking-[0.4em] text-white/20 hidden lg:block">
+        AI Reconciliation Layer
+      </div>
+
+      {/* Header: Command Center + Tabs */}
+      <div className="relative z-40">
+        <CommandCenter
+          status={systemStatus}
+          totalCapital={totalCapital}
+          pnl24hr={pnl24hr}
+          activePositions={activePositions}
+          totalMatches={totalMatches}
+        />
+
+        {/* Tab navigation bar */}
+        <div className="border-b border-white/5 bg-black/60">
+          <div className="max-w-[1400px] mx-auto px-6 py-2 flex items-center justify-between">
+            <TabNav activeTab={activeTab} onTabChange={setActiveTab} />
+            <div className="hidden md:flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.35em] text-white/30">
+              <span className="h-px w-6 bg-white/15" />
+              <span>Cross-Platform Arbitrage Engine</span>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Tab content with page transitions */}
-      <main className="flex-1 max-w-[1400px] w-full mx-auto px-6 py-6">
+      <main className="relative z-10 flex-1 max-w-[1400px] w-full mx-auto px-6 py-8">
         <AnimatePresence mode="wait">
           {activeTab === "dashboard" && (
             <motion.div
@@ -72,25 +96,29 @@ export default function Home() {
               animate="animate"
               exit="exit"
               transition={pageTransition}
-              className="space-y-6"
+              className="space-y-8"
             >
               <DashboardHero opportunities={opportunities} />
               <StatsGrid opportunities={opportunities} />
 
               {/* Top opportunities preview */}
               <div>
-                <div className="flex items-center justify-between mb-4">
-                  <h2 className="text-sm font-semibold text-white/70">
-                    Top Opportunities
-                  </h2>
-                  <button
-                    onClick={() => setActiveTab("feed")}
-                    className="text-[11px] font-mono text-neon-blue/70 hover:text-neon-blue transition-colors"
-                  >
-                    View all →
-                  </button>
-                </div>
-                <ArbitrageFeed opportunities={opportunities.slice(0, 5)} compact />
+                <SectionHeader
+                  eyebrow="[ Opportunities ]"
+                  title="Top Spreads"
+                  right={
+                    <button
+                      onClick={() => setActiveTab("feed")}
+                      className="group flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.3em] text-white/50 hover:text-white transition-colors"
+                    >
+                      <span>View all</span>
+                      <span className="transition-transform duration-300 group-hover:translate-x-1">
+                        →
+                      </span>
+                    </button>
+                  }
+                />
+                <ArbitrageFeed opportunities={topOpportunities} compact />
               </div>
             </motion.div>
           )}
@@ -123,54 +151,65 @@ export default function Home() {
         </AnimatePresence>
       </main>
 
-      {/* Footer */}
-      <footer className="border-t border-white/5 mt-auto">
-        <div className="w-full bg-obsidian border-b border-white/10 overflow-hidden py-2 flex items-center">
-          <div className="flex-1 overflow-hidden relative">
-            <motion.div 
-              className="flex whitespace-nowrap gap-8 px-4 text-[11px] font-mono text-white/80 font-bold uppercase tracking-widest"
-              animate={{ x: [0, -1000] }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            >
-              <span>AI RECONCILIATION</span>
-              <span className="text-white/30">♦</span>
-              <span>REAL-TIME SPREADS</span>
-              <span className="text-white/30">♦</span>
-              <span>EXECUTION READY</span>
-              <span className="text-white/30">♦</span>
-              <span>POLYMARKET × KALSHI</span>
-              <span className="text-white/30">♦</span>
-              <span>CROSS-PLATFORM DETECTION</span>
-              <span className="text-white/30">♦</span>
-              {/* Duplicate for seamless loop */}
-              <span>AI RECONCILIATION</span>
-              <span className="text-white/30">♦</span>
-              <span>REAL-TIME SPREADS</span>
-              <span className="text-white/30">♦</span>
-              <span>EXECUTION READY</span>
-              <span className="text-white/30">♦</span>
-              <span>POLYMARKET × KALSHI</span>
-              <span className="text-white/30">♦</span>
-              <span>CROSS-PLATFORM DETECTION</span>
-              <span className="text-white/30">♦</span>
-            </motion.div>
-          </div>
-        </div>
-        <div className="max-w-[1400px] mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="w-4 h-4 rounded-full bg-white/10 flex items-center justify-center text-[8px] font-bold">N</div>
-            <span className="text-[10px] font-mono text-white/40 uppercase tracking-wider">
-              2026 AXIOM. ALL SYSTEMS OPERATIONAL.
-            </span>
-          </div>
-          <div className="text-[10px] font-mono text-white/40 uppercase tracking-wider border border-white/10 rounded-full px-4 py-1">
-            CRAFTED WITH ♥ FOR MARKETS
-          </div>
-          <span className="text-[10px] font-mono text-white/40 uppercase tracking-wider">
-            V1.0 · PREDICTION ARBITRAGE
+      {/* Footer — thin HUD band. Matches the aesthetic of CinematicFooter
+          on the landing but quieter (no marquee, no CTA — this is the
+          operating dashboard, not a marketing surface). */}
+      <footer className="relative z-10 border-t border-white/5 mt-auto bg-black/60">
+        <div className="max-w-[1400px] mx-auto px-6 py-4 flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.3em] text-white/30">
+          <span>AXIOM // v1.0.0 // Command Center</span>
+          <span className="hidden md:inline">
+            Polymarket × Kalshi &nbsp;/&nbsp; AI Reconciliation Layer
           </span>
+          <span className="tabular-nums">All Systems Nominal</span>
         </div>
       </footer>
+    </div>
+  );
+}
+
+/** Thin L-shaped brackets in each viewport corner — same as landing. */
+function CornerBrackets() {
+  const common = "pointer-events-none fixed z-20 h-5 w-5 border-white/25";
+  return (
+    <>
+      <span className={`${common} top-3 left-3 border-t border-l`} aria-hidden />
+      <span className={`${common} top-3 right-3 border-t border-r`} aria-hidden />
+      <span
+        className={`${common} bottom-3 left-3 border-b border-l`}
+        aria-hidden
+      />
+      <span
+        className={`${common} bottom-3 right-3 border-b border-r`}
+        aria-hidden
+      />
+    </>
+  );
+}
+
+/** Shared section header with bracketed eyebrow + title. Mirrors the
+ * "[ Command Center ]" motif on the landing so sections feel like
+ * chapters of the same document. */
+function SectionHeader({
+  eyebrow,
+  title,
+  right,
+}: {
+  eyebrow: string;
+  title: string;
+  right?: React.ReactNode;
+}) {
+  return (
+    <div className="mb-5 flex items-end justify-between">
+      <div className="flex flex-col gap-2">
+        <div className="flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.4em] text-white/40">
+          <span className="h-px w-8 bg-white/20" />
+          <span>{eyebrow}</span>
+        </div>
+        <h2 className="font-sans text-lg md:text-xl font-semibold tracking-tight text-white/90">
+          {title}
+        </h2>
+      </div>
+      {right}
     </div>
   );
 }

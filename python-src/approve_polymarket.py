@@ -6,7 +6,7 @@ load_dotenv()
 # USDC on Polygon
 USDC_ADDRESS = "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174"
 SPENDER      = "0x4bFb41d5B3570DeFd03C39a9A4D8dE6Bd8B8982E"  # CTF Exchange
-RPC_URL      = "https://polygon-mainnet.g.alchemy.com/v2/z9AIVzi1cFK58P9IU0-p2"
+RPC_URL      = os.getenv("POLYGON_RPC_URL") or "https://polygon-rpc.com"  # public fallback; set POLYGON_RPC_URL in .env for Alchemy/Infura
 
 USDC_ABI = [
     {

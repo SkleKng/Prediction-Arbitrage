@@ -30,21 +30,29 @@ interface ArbitrageDataState {
   isConnected: boolean;
 }
 
+const PRICE_POLL_MS = 3000;
+const MATCHES_REFRESH_MS = 60_000;
+// Track up to this many recent socket reads to decide if WS is "live".
+// Any successful /api/prices fetch resets the counter.
+const STALE_THRESHOLD_MS = 15_000;
+
 /**
- * Hook to manage arbitrage data.
- * Currently uses mock data. When ready, swap in WebSocket connections
- * to python-src/ws_price_monitoring.py and load matches from
- * python-src/matches/embed_matches.json via an API route.
+ * Live arbitrage data hook.
  *
- * WebSocket integration points:
- * - Polymarket: wss://ws-subscriptions-clob.polymarket.com/ws/market
- *   Subscribe with: { type: "market", assets_ids: [...clob_token_ids] }
- *   Listen for: event_type === "best_bid_ask"
+ * Data flow:
+ *  - /api/matches      → AI-confirmed (Polymarket × Kalshi) pairs from
+ *                        python-src/matches/ai_matches.json joined with the
+ *                        rich market metadata in embed_matches.json.
+ *  - /api/prices       → Latest order-book prices written every tick by
+ *                        python-src/ws_price_monitoring.py to
+ *                        prices/live_prices.json.
+ *  - /api/opportunities (optional) → Append-only history of arbs the
+ *                        Python detector has fired on (used for the
+ *                        "active positions" / alert counters).
  *
- * - Kalshi: wss://api.elections.kalshi.com/trade-api/ws/v2
- *   Requires KALSHI-ACCESS-KEY + PSS-signed timestamp headers
- *   Subscribe with: { cmd: "subscribe", params: { channels: ["ticker"], market_tickers: [...] } }
- *   Listen for: type === "ticker"
+ * Opportunities are computed client-side on each price tick by
+ * cross-referencing the two streams. We deliberately filter out matches
+ * with no live data so the feed isn't padded with 200+ empty cards.
  */
 export function useArbitrageData(): ArbitrageDataState {
   const [state, setState] = useState<ArbitrageDataState>(() => ({
@@ -56,47 +64,106 @@ export function useArbitrageData(): ArbitrageDataState {
     totalMatches: MOCK_TOTAL_MATCHES,
     matches: MOCK_MATCHES,
     livePrices: MOCK_LIVE_PRICES,
-    isConnected: true,
+    isConnected: false,
   }));
 
-  // Simulate price ticks for demo purposes
-  const tickRef = useRef<ReturnType<typeof setInterval>>(undefined);
+  // Holds the most recent confirmed matches list so price ticks can
+  // recompute opportunities without re-fetching matches every 3s.
+  const matchesRef = useRef<MatchPair[]>(MOCK_MATCHES);
+  const lastPriceTickRef = useRef<number>(0);
 
-  // Fetch live prices from the Python backend output
+  const fetchMatches = useCallback(async () => {
+    try {
+      const res = await fetch("/api/matches");
+      if (!res.ok) return;
+      const data = (await res.json()) as {
+        matches: MatchPair[];
+        confirmedCount: number;
+        totalAiPairs: number;
+      };
+
+      if (!Array.isArray(data.matches) || data.matches.length === 0) return;
+
+      matchesRef.current = data.matches;
+      setState((prev) => ({
+        ...prev,
+        matches: data.matches,
+        totalMatches: data.totalAiPairs || data.confirmedCount,
+        // Recompute with whatever prices we already have.
+        opportunities: filterUseful(
+          computeArbitrageOpportunities(data.matches, prev.livePrices)
+        ),
+      }));
+    } catch (err) {
+      console.warn("Failed to fetch matches", err);
+    }
+  }, []);
+
   const fetchLivePrices = useCallback(async () => {
     try {
       const res = await fetch("/api/prices");
       if (!res.ok) return;
-      const liveData = await res.json();
+      const liveData = (await res.json()) as LivePrices;
+
+      lastPriceTickRef.current = Date.now();
 
       setState((prev) => {
-        // Recompute PnL with slight drift (for demo purposes)
-        const pnlDrift = (Math.random() - 0.45) * 15;
-        
-        // Ensure we merge with the initial mock prices as a fallback so we don't get 0s for missing markets
-        const mergedPrices = { ...MOCK_LIVE_PRICES, ...liveData };
+        // Merge with mock prices as a fallback so demo markets keep showing
+        // numbers even when the WS only knows about a subset of them.
+        const mergedPrices: LivePrices = { ...MOCK_LIVE_PRICES, ...liveData };
+
+        const opportunities = filterUseful(
+          computeArbitrageOpportunities(matchesRef.current, mergedPrices)
+        );
+
+        const isFresh = Date.now() - lastPriceTickRef.current < STALE_THRESHOLD_MS;
+        const profitableCount = opportunities.filter((o) => o.spread > 0).length;
 
         return {
           ...prev,
           livePrices: mergedPrices,
-          opportunities: computeArbitrageOpportunities(mergedPrices),
-          pnl24hr: prev.pnl24hr + pnlDrift,
+          opportunities,
+          isConnected: isFresh,
+          activePositions: profitableCount,
+          systemStatus: {
+            ...prev.systemStatus,
+            polySocket: isFresh ? "connected" : "reconnecting",
+            kalshiSocket: isFresh ? "connected" : "reconnecting",
+            aiEngine: matchesRef.current.length > 0 ? "active" : "idle",
+          },
         };
       });
     } catch (err) {
-      // Use console.warn instead of console.error to prevent the Next.js error overlay
-      // from popping up during transient network errors or dev server restarts
-      console.warn("Failed to fetch live prices (transient network error)", err);
+      console.warn("Failed to fetch live prices", err);
+      setState((prev) => ({ ...prev, isConnected: false }));
     }
   }, []);
 
   useEffect(() => {
-    // Poll the API every 3 seconds to get the latest prices from the Python script
-    tickRef.current = setInterval(fetchLivePrices, 3000);
+    fetchMatches();
+    fetchLivePrices();
+
+    const priceTimer = setInterval(fetchLivePrices, PRICE_POLL_MS);
+    const matchesTimer = setInterval(fetchMatches, MATCHES_REFRESH_MS);
+
     return () => {
-      if (tickRef.current) clearInterval(tickRef.current);
+      clearInterval(priceTimer);
+      clearInterval(matchesTimer);
     };
-  }, [fetchLivePrices]);
+  }, [fetchLivePrices, fetchMatches]);
 
   return state;
+}
+
+/**
+ * Drop opportunities where neither side has any live price data — they're
+ * just stale matches and would clutter the feed. We keep cards that have at
+ * least one side priced, since that's still meaningful market context.
+ */
+function filterUseful(opps: ArbitrageOpportunity[]): ArbitrageOpportunity[] {
+  return opps.filter((o) => {
+    const hasPoly = o.polyPrice && (o.polyPrice.yes_ask > 0 || (o.polyPrice.no_ask ?? 0) > 0);
+    const hasKalshi = o.kalshiPrice && o.kalshiPrice.yes_ask > 0;
+    return hasPoly || hasKalshi;
+  });
 }

@@ -1,14 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { LayoutDashboard, Radio, Brain } from "lucide-react";
 
 export type TabId = "dashboard" | "feed" | "ai";
 
-const tabs: { id: TabId; label: string; icon: React.ElementType }[] = [
-  { id: "dashboard", label: "Dashboard", icon: LayoutDashboard },
-  { id: "feed", label: "Live Feed", icon: Radio },
-  { id: "ai", label: "AI Engine", icon: Brain },
+const tabs: { id: TabId; label: string }[] = [
+  { id: "dashboard", label: "Dashboard" },
+  { id: "feed", label: "Live Feed" },
+  { id: "ai", label: "AI Engine" },
 ];
 
 interface TabNavProps {
@@ -16,36 +15,51 @@ interface TabNavProps {
   onTabChange: (tab: TabId) => void;
 }
 
+/**
+ * Typographic tab nav — no icons, no pills. Matches the landing's
+ * bracketed mono-caps language. Active tab is marked by a thin rule
+ * underneath (layoutId animated) and a brighter label color.
+ */
 export function TabNav({ activeTab, onTabChange }: TabNavProps) {
   return (
-    <div className="flex items-center gap-1 p-1 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+    <div className="flex items-center gap-1">
       {tabs.map((tab) => {
         const isActive = activeTab === tab.id;
         return (
           <button
             key={tab.id}
             onClick={() => onTabChange(tab.id)}
-            className="relative flex items-center gap-2 px-4 py-2 rounded-lg text-sm transition-colors duration-200"
+            className="group relative px-4 py-2 font-mono text-[10px] uppercase tracking-[0.35em] transition-colors"
           >
-            {isActive && (
-              <motion.div
-                layoutId="activeTab"
-                className="absolute inset-0 rounded-lg bg-white/[0.08] border border-white/[0.1]"
-                transition={{ type: "spring", stiffness: 400, damping: 30 }}
-              />
-            )}
-            <tab.icon
-              className={`relative z-10 w-3.5 h-3.5 transition-colors duration-200 ${
-                isActive ? "text-neon-green" : "text-white/30"
-              }`}
-            />
             <span
-              className={`relative z-10 font-mono text-xs tracking-wide transition-colors duration-200 ${
-                isActive ? "text-white/90" : "text-white/40"
+              className={`relative z-10 flex items-center gap-2 transition-colors duration-200 ${
+                isActive ? "text-white" : "text-white/40 group-hover:text-white/70"
               }`}
             >
-              {tab.label}
+              <span
+                className={`transition-colors duration-200 ${
+                  isActive ? "text-emerald-400" : "text-white/20"
+                }`}
+              >
+                [
+              </span>
+              <span>{tab.label}</span>
+              <span
+                className={`transition-colors duration-200 ${
+                  isActive ? "text-emerald-400" : "text-white/20"
+                }`}
+              >
+                ]
+              </span>
             </span>
+
+            {isActive && (
+              <motion.span
+                layoutId="activeTabUnderline"
+                className="absolute left-3 right-3 -bottom-[1px] h-px bg-emerald-400/70"
+                transition={{ type: "spring", stiffness: 400, damping: 32 }}
+              />
+            )}
           </button>
         );
       })}

@@ -46,15 +46,6 @@ def load_matches():
 prices = {}
 arb_opportunities = []
 
-# Optional sync callbacks invoked for each detected arb opportunity (before append to arb_opportunities).
-# Signature: callback(opp: dict) where opp matches the structure built in check_arb.
-ARB_CALLBACKS: list[Callable[[dict], None]] = []
-
-
-def register_arb_callback(cb: Callable[[dict], None]) -> None:
-    """Register a function to run when an arb opportunity is detected (paper trading, alerts, etc.)."""
-    ARB_CALLBACKS.append(cb)
-
 def kalshi_taker_fee(p: float, contracts: float = 1.0) -> float:
     """Fee = round_up(0.07 * C * P * (1 - P))"""
     import math
@@ -133,11 +124,6 @@ def check_arb(match_title: str, poly_key: str, kalshi_key: str):
                 "kalshi_no_cost_raw": round(kalshi_no_cost_raw, 4),
                 "timestamp": datetime.datetime.utcnow().isoformat(),
             }
-            for cb in ARB_CALLBACKS:
-                try:
-                    cb(opp)
-                except Exception as e:
-                    print(f"[ARB_CALLBACK] error: {e}")
             arb_opportunities.append(opp)
             with open(ARB_OUTPUT_FILE, "w") as f:
                 json.dump(arb_opportunities, f, indent=2)

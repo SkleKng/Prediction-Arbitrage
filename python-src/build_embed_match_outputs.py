@@ -126,7 +126,6 @@ def read_env_value(name):
 GOOGLE_API_KEY = (
     os.getenv("GOOGLE_API_KEY")
     or read_env_value("GOOGLE_API_KEY")
-    or "AQ.Ab8RN6LfYYftPH-eYORfGpsHhVyc-zaJHBlI2jjGx0QvIydP3Q"
 )
 
 
@@ -159,7 +158,7 @@ def batch_check_with_gemini(pairs_batch):
     import google.genai as genai
     from google.genai import types
     
-    client = genai.Client(api_key=GOOGLE_API_KEY)
+    client = genai.Client(vertexai=True, api_key=GOOGLE_API_KEY)
     
     prompt = "Are the following pairs of prediction market questions asking the exact same thing, including the same event, outcome, and resolution criteria, even if worded differently? Return a JSON array of strings, where each string is exactly 'yes' or 'no', corresponding to the pairs in order. For example: [\"yes\", \"no\", \"yes\"].\n\n"
     for i, (p, k) in enumerate(pairs_batch):
@@ -202,11 +201,14 @@ def batch_check_with_gemini(pairs_batch):
                 or "prepayment credits are depleted" in error_message
             ):
                 raise RuntimeError("Gemini quota is exhausted; ai_matches.json was not updated.") from e
-            if '429' in error_message:
+            if '429' in error_message or 'Quota exceeded' in error_message:
                 print("Rate limit hit, sleeping for 60 seconds...")
                 time.sleep(60)
                 continue
-            time.sleep(5) # Small sleep on error before retry
+            
+            # If it's a timeout or other error, sleep briefly and retry
+            print("Sleeping for 10 seconds before retry...")
+            time.sleep(10)
             
     raise RuntimeError("Gemini API failed after retries; refusing to write non-AI matches.")
 
