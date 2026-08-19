@@ -1,2 +1,25 @@
+# OS / editor
 .DS_Store
+.cursor/
+
+# Logs
 .run-logs/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.env
+
+# Node
+node_modules/
+.next/
+
+# Local scratch / secrets — never commit
+python-src/vpn-test/
+python-src/test.py
+python-src/paper_trading/
+python-src/prices/
+*credentials*
+*.pem
+*.ovpn
